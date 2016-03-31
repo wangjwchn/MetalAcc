@@ -133,8 +133,9 @@ class Saturation: AccImageFilter {
     
 }
 
+// Gamma ranges from 0.0 to 3.0, with 1.0 as the normal level
 class Gamma: AccImageFilter {
-    var factor:Float?//0.0~1.0
+    var factor:Float?//0.0~3.0
     override init(){
         super.init()
         self.name = "Gamma"

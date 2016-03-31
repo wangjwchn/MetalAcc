@@ -21,8 +21,8 @@ class ViewController: UIViewController {
         let imagebase = AccImage()
         imagebase.AddImage(image)
         
-        let filter = Saturation()
-        filter.factor = 0.5
+        let filter = Gamma()
+        filter.factor = 1.0
         //filter.sigma  = 3.0
         /*
         let filter = Pixelate()

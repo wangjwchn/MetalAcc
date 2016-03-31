@@ -65,8 +65,8 @@ kernel void Gamma(texture2d<float, access::read> inTexture [[texture(0)]],
 {
     float4 inColor = inTexture.read(gid);
     float4 outColor(pow(inColor.r,*factor),
-                    pow(inColor.r,*factor),
-                    pow(inColor.r,*factor),
+                    pow(inColor.g,*factor),
+                    pow(inColor.b,*factor),
                     1.0);
 
     outTexture.write(outColor, gid);
