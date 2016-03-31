@@ -22,15 +22,15 @@ class ViewController: UIViewController {
         let imagebase = AccImage()
         imagebase.AddImage(image)
         
-        let filter = Grayscale()
-        filter.grayscaleFactor = 0.0
+        let filter = Brightness()
+        filter.brightness = 0.5
         //filter.sigma  = 3.0
         /*
         let filter = Pixelate()
         filter.pixelSize = 5
          */
         imagebase.AddFilter(filter)
- //let after = image
+        //let after = image
         let after = imagebase.Processing()
         imageview.image = after
  

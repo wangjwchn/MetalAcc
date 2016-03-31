@@ -88,3 +88,26 @@ class Grayscale: AccImageFilter {
     }
 
 }
+
+class Brightness: AccImageFilter {
+    var brightness:Float?
+    override init(){
+        super.init()
+        self.name = "Luminance"
+    }
+    override func applyFilter() {
+        let commandBuffer = self.base!.commandQueue!.commandBuffer()
+        let commandEncoder = commandBuffer.computeCommandEncoder()
+        commandEncoder.setComputePipelineState(self.base!.pipelineState!)
+        commandEncoder.setTexture(self.base!.inTexture!, atIndex: 0)
+        commandEncoder.setTexture(self.base!.outTexture!, atIndex: 1)
+        let buffer = self.base!.device!.newBufferWithBytes(&brightness, length: sizeof(Float)*4, options: [MTLResourceOptions.StorageModeShared])//at lest 16
+        commandEncoder.setBuffer(buffer, offset: 0, atIndex: 0)
+        commandEncoder.dispatchThreadgroups(self.base!.threadGroups!, threadsPerThreadgroup: self.base!.threadGroupCount)
+        commandEncoder.endEncoding()
+        commandBuffer.commit()
+        commandBuffer.waitUntilCompleted()
+    }
+    
+}
+

@@ -22,12 +22,27 @@ kernel void Pixelate(texture2d<float, access::read> inTexture [[texture(0)]],
 
 kernel void Grayscale(texture2d<float, access::read> inTexture [[texture(0)]],
                               texture2d<float, access::write> outTexture [[texture(1)]],
-                              device float *saturationFactor [[buffer(0)]],
+                              device float *grayscaleFactor [[buffer(0)]],
                               uint2 gid [[thread_position_in_grid]])
 {
     float4 inColor = inTexture.read(gid);
     float value = dot(inColor.rgb, float3(0.299, 0.587, 0.114));
     float4 grayColor(value, value, value, 1.0);
-    float4 outColor = mix(grayColor, inColor, *saturationFactor);
+    float4 outColor = mix(grayColor, inColor, *grayscaleFactor);
     outTexture.write(outColor, gid);
 }
+
+
+kernel void Brightness(texture2d<float, access::read> inTexture [[texture(0)]],
+                      texture2d<float, access::write> outTexture [[texture(1)]],
+                      device float *brightness [[buffer(0)]],
+                      uint2 gid [[thread_position_in_grid]])
+{
+    float4 inColor = inTexture.read(gid);
+    float4 outColor(inColor.r * *brightness,
+                    inColor.g * *brightness,
+                    inColor.b * *brightness,
+                    1.0);
+    outTexture.write(outColor, gid);
+}
+
