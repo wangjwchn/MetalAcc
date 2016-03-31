@@ -199,7 +199,6 @@ class AccExposureFilter: AccImageFilter {
     }
 }
 
-
 class AccLuminanceThresholdFilter: AccImageFilter {
     var threshold:Float?
     override init(){
