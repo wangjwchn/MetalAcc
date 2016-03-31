@@ -7,7 +7,7 @@
 //
 
 import MetalKit
-class AccImageBase:AccBase{
+class AccImage:AccBase{
     
     let bytesPerPixel: Int = 4
     let threadGroupCount = MTLSizeMake(16, 16, 1)

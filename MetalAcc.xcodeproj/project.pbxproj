@@ -16,8 +16,7 @@
 		28C6F7D61CAB736D002E59F7 /* AccImageBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C6F7D51CAB736D002E59F7 /* AccImageBase.swift */; };
 		28C6F7D81CAB77BC002E59F7 /* AccImageFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C6F7D71CAB77BC002E59F7 /* AccImageFilter.swift */; };
 		28C6F7DA1CABA479002E59F7 /* Kernels.metal in Sources */ = {isa = PBXBuildFile; fileRef = 28C6F7D91CABA479002E59F7 /* Kernels.metal */; };
-		28C6F7DD1CABAEA0002E59F7 /* AnimalImage2.png in Resources */ = {isa = PBXBuildFile; fileRef = 28C6F7DC1CABAEA0002E59F7 /* AnimalImage2.png */; };
-		28C6F7DF1CABB669002E59F7 /* AnimalImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 28C6F7DE1CABB668002E59F7 /* AnimalImage.png */; };
+		28C6F7DD1CABAEA0002E59F7 /* AnimalImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 28C6F7DC1CABAEA0002E59F7 /* AnimalImage.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,8 +31,7 @@
 		28C6F7D51CAB736D002E59F7 /* AccImageBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccImageBase.swift; sourceTree = "<group>"; };
 		28C6F7D71CAB77BC002E59F7 /* AccImageFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccImageFilter.swift; sourceTree = "<group>"; };
 		28C6F7D91CABA479002E59F7 /* Kernels.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Kernels.metal; sourceTree = "<group>"; };
-		28C6F7DC1CABAEA0002E59F7 /* AnimalImage2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AnimalImage2.png; sourceTree = "<group>"; };
-		28C6F7DE1CABB668002E59F7 /* AnimalImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AnimalImage.png; sourceTree = "<group>"; };
+		28C6F7DC1CABAEA0002E59F7 /* AnimalImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AnimalImage.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,8 +70,7 @@
 				28C6F7D51CAB736D002E59F7 /* AccImageBase.swift */,
 				28C6F7D71CAB77BC002E59F7 /* AccImageFilter.swift */,
 				28C6F7D91CABA479002E59F7 /* Kernels.metal */,
-				28C6F7DE1CABB668002E59F7 /* AnimalImage.png */,
-				28C6F7DC1CABAEA0002E59F7 /* AnimalImage2.png */,
+				28C6F7DC1CABAEA0002E59F7 /* AnimalImage.png */,
 				287A82911CAA72D900CD5721 /* Main.storyboard */,
 				287A82941CAA72D900CD5721 /* Assets.xcassets */,
 				287A82961CAA72D900CD5721 /* LaunchScreen.storyboard */,
@@ -143,9 +140,8 @@
 			files = (
 				287A82981CAA72D900CD5721 /* LaunchScreen.storyboard in Resources */,
 				287A82951CAA72D900CD5721 /* Assets.xcassets in Resources */,
-				28C6F7DF1CABB669002E59F7 /* AnimalImage.png in Resources */,
 				287A82931CAA72D900CD5721 /* Main.storyboard in Resources */,
-				28C6F7DD1CABAEA0002E59F7 /* AnimalImage2.png in Resources */,
+				28C6F7DD1CABAEA0002E59F7 /* AnimalImage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

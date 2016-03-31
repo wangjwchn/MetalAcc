@@ -19,11 +19,11 @@ class ViewController: UIViewController {
         let imageview = UIImageView()
         imageview.frame = CGRect(x: 0.0, y: 40 , width: 250, height: 200)
         
-        let imagebase = AccImageBase()
+        let imagebase = AccImage()
         imagebase.AddImage(image)
         
-        let filter = GaussianBlur()
-        filter.sigma  = 3.0
+        let filter = ImageSobel()
+        //filter.sigma  = 3.0
         /*
         let filter = Pixelate()
         filter.pixelSize = 5
