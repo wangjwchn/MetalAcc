@@ -39,9 +39,9 @@ kernel void Brightness(texture2d<float, access::read> inTexture [[texture(0)]],
                       uint2 gid [[thread_position_in_grid]])
 {
     float4 inColor = inTexture.read(gid);
-    float4 outColor(inColor.r * *factor,
-                    inColor.g * *factor,
-                    inColor.b * *factor,
+    float4 outColor(inColor.r + *factor,
+                    inColor.g + *factor,
+                    inColor.b + *factor,
                     1.0);
     outTexture.write(outColor, gid);
 }

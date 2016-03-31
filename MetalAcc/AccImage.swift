@@ -1,5 +1,5 @@
 //
-//  AccImageBase.swift
+//  AccImage.swift
 //  MetalAcc
 //
 //  Created by 王佳玮 on 16/3/30.
@@ -26,9 +26,9 @@ class AccImage:AccBase{
     }
     
     func AddFilter(filter:AccImageFilter){
-        if let kernelFunction = self.library!.newFunctionWithName(filter.name!){
+        if let function = self.library!.newFunctionWithName(filter.name!){
         do {
-            self.pipelineState = try device!.newComputePipelineStateWithFunction(kernelFunction)
+            self.pipelineState = try device!.newComputePipelineStateWithFunction(function)
         }
         catch {
             fatalError("Unable to setup Metal")

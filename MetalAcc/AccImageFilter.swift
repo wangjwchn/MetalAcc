@@ -42,7 +42,11 @@ class AccImageFilter{
     }
 }
 
-class Pixelate:AccImageFilter{
+/*
+ AccPixelateFilter:Pixelate an image
+ - pixelSize:The degree of pixelating (>0)
+*/
+class AccPixelateFilter:AccImageFilter{
     var pixelSize:UInt?//0~?
     override init(){
         super.init()
@@ -53,7 +57,12 @@ class Pixelate:AccImageFilter{
     }
 }
 
-class GaussianBlur:AccImageFilter{
+/*
+ AccGaussianBlurFilter:Gaussian blur
+ - sigma:The standard deviation of gaussian blur filter
+*/
+ 
+class AccGaussianBlurFilter:AccImageFilter{
     var sigma:Float?//0.0~10.0
     override init(){
         super.init()
@@ -68,7 +77,11 @@ class GaussianBlur:AccImageFilter{
     }
 }
 
-class Sobel: AccImageFilter {
+/*
+ AccSobelFilter: Initialize a Sobel filter on a given device using the default color
+ - transform. Default: BT.601/JPEG {0.299f, 0.587f, 0.114f}
+*/
+class AccSobelFilter: AccImageFilter {
     override init(){
         super.init()
         self.name = "ImageSobel"
@@ -82,8 +95,10 @@ class Sobel: AccImageFilter {
     }
 }
 
-
-class Grayscale: AccImageFilter {
+/*
+ AccGrayscaleFilter: Converts an image to grayscale
+*/
+class AccGrayscaleFilter: AccImageFilter {
     var grayscale:Float?
     override init(){
         super.init()
@@ -95,7 +110,11 @@ class Grayscale: AccImageFilter {
 
 }
 
-class Brightness: AccImageFilter {
+/*
+ AccBrightnessFilter: Adjusts the brightness of the image
+ - brightness: The adjusted brightness (-1.0 ~ 1.0, with 0.0 as the default)
+*/
+class AccBrightnessFilter: AccImageFilter {
     var brightness:Float?//0.0~1.0
     override init(){
         super.init()
@@ -107,7 +126,11 @@ class Brightness: AccImageFilter {
     
 }
 
-class Saturation: AccImageFilter {
+/*
+ AccSaturationFilter: Adjusts the saturation of an image
+ - saturation: The degree of saturation or desaturation to apply to the image (0.0 ~ 2.0, with 1.0 as the default)
+*/
+class AccSaturationFilter: AccImageFilter {
     var saturation:Float?//0.0~1.0
     override init(){
         super.init()
@@ -119,20 +142,26 @@ class Saturation: AccImageFilter {
     
 }
 
-// Gamma ranges from 0.0 to 3.0, with 1.0 as the normal level
-class Gamma: AccImageFilter {
+/*
+ AccImageGammaFilter: Adjusts the gamma of an image
+ - gamma: The gamma adjustment to apply (0.0 ~ 3.0, with 1.0 as the default)
+*/
+class AccGammaFilter: AccImageFilter {
     var gamma:Float?//0.0~3.0
     override init(){
         super.init()
         self.name = "Gamma"
     }
     override func applyFilter() {
-        addCommandWithOneFactor(Gamma)
+        addCommandWithOneFactor(gamma)
     }
     
 }
 
-class ColorInvert: AccImageFilter {
+/*
+ AccColorInvertFilter: Inverts the colors of an image
+*/
+class AccColorInvertFilter: AccImageFilter {
     override init(){
         super.init()
         self.name = "ColorInvert"
@@ -142,8 +171,11 @@ class ColorInvert: AccImageFilter {
     }
 }
 
-//Contrast ranges from 0.0 to 4.0 (max contrast), with 1.0 as the normal level
-class Contrast: AccImageFilter {
+/*
+ AccContrastFilter: Adjusts the contrast of the image
+ - contrast: The adjusted contrast (0.0 ~ 4.0, with 1.0 as the default)
+*/
+class AccContrastFilter: AccImageFilter {
     var contrast:Float?//0.0~3.0
     override init(){
         super.init()

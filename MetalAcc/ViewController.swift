@@ -12,23 +12,23 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let image = UIImage(named: "AnimalImage")!
+        let inimage = UIImage(named: "AnimalImage")!
         
         // Create ImageView and add animated image
         let imageview = UIImageView()
         imageview.frame = CGRect(x: 0.0, y: 40 , width: 250, height: 200)
         
-        let imagebase = AccImage()
-        imagebase.AddImage(image)
+        let accimage = AccImage()
+        accimage.AddImage(inimage)
         
 
-        let filter = Contrast()
-        filter.contrast = 3
+        let filter = AccBrightnessFilter()
+        filter.brightness = 0.95
          
-        imagebase.AddFilter(filter)
+        accimage.AddFilter(filter)
         //let after = image
-        let after = imagebase.Processing()
-        imageview.image = after
+        let outimage = accimage.Processing()
+        imageview.image = outimage
  
         self.view.addSubview(imageview)
     }
