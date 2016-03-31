@@ -14,7 +14,6 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         let inimage = UIImage(named: "AnimalImage")!
         
-        // Create ImageView and add animated image
         let imageview = UIImageView()
         imageview.frame = CGRect(x: 0.0, y: 40 , width: 250, height: 200)
         
@@ -24,9 +23,8 @@ class ViewController: UIViewController {
 
         let filter = AccBrightnessFilter()
         filter.brightness = 0.95
-         
         accimage.AddFilter(filter)
-        //let after = image
+        
         let outimage = accimage.Processing()
         imageview.image = outimage
  
