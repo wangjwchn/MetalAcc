@@ -156,4 +156,23 @@ class Gamma: AccImageFilter {
     
 }
 
+class ColorInvert: AccImageFilter {
+    override init(){
+        super.init()
+        self.name = "ColorInvert"
+    }
+    override func applyFilter() {
+        let commandBuffer = self.base!.commandQueue!.commandBuffer()
+        let commandEncoder = commandBuffer.computeCommandEncoder()
+        commandEncoder.setComputePipelineState(self.base!.pipelineState!)
+        commandEncoder.setTexture(self.base!.inTexture!, atIndex: 0)
+        commandEncoder.setTexture(self.base!.outTexture!, atIndex: 1)
+        commandEncoder.dispatchThreadgroups(self.base!.threadGroups!, threadsPerThreadgroup: self.base!.threadGroupCount)
+        commandEncoder.endEncoding()
+        commandBuffer.commit()
+        commandBuffer.waitUntilCompleted()
+    }
+}
+
+
 
