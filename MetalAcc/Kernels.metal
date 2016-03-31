@@ -85,3 +85,16 @@ kernel void ColorInvert(texture2d<float, access::read> inTexture [[texture(0)]],
     outTexture.write(outColor, gid);
 }
 
+kernel void Contrast(texture2d<float, access::read> inTexture [[texture(0)]],
+                        texture2d<float, access::write> outTexture [[texture(1)]],
+                     device float *factor [[buffer(0)]],
+                        uint2 gid [[thread_position_in_grid]])
+{
+    float4 inColor = inTexture.read(gid);
+    float4 outColor((inColor.r - 0.5) * (*factor + 0.5),
+                    (inColor.g - 0.5) * (*factor + 0.5),
+                    (inColor.b - 0.5) * (*factor + 0.5),
+                    1.0);
+    
+    outTexture.write(outColor, gid);
+}

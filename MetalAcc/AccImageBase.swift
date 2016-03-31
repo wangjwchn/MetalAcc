@@ -9,7 +9,7 @@
 import MetalKit
 class AccImage:AccBase{
     
-    let bytesPerPixel: Int = 4
+    
     let threadGroupCount = MTLSizeMake(16, 16, 1)
     var inTexture: MTLTexture?
     var outTexture: MTLTexture?
@@ -52,8 +52,7 @@ class AccImage:AccBase{
         let bytesPerPixel: Int = 4
         let bytesPerRow: Int = bytesPerPixel * width
         let bitsPerComponent: Int = 8
-        
-        
+    
         let bitmapContext: CGContextRef = CGBitmapContextCreate(rawData, width, height, bitsPerComponent, bytesPerRow, colorSpace, (CGBitmapInfo.ByteOrder32Big.rawValue | CGImageAlphaInfo.PremultipliedLast.rawValue))!
         
         // Flip the context so the positive Y axis points down
@@ -71,7 +70,7 @@ class AccImage:AccBase{
     }
     
     func imageFromTexture(texture: MTLTexture) -> UIImage {
-        
+        let bytesPerPixel: Int = 4
         let imageByteCount = texture.width * texture.height * bytesPerPixel
         let bytesPerRow = texture.width * bytesPerPixel
         var src = [UInt8](count: Int(imageByteCount), repeatedValue: 0)

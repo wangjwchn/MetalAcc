@@ -21,13 +21,10 @@ class ViewController: UIViewController {
         let imagebase = AccImage()
         imagebase.AddImage(image)
         
-        let filter = ColorInvert()
-        //filter.factor = 1.0
-        //filter.sigma  = 3.0
-        /*
-        let filter = Pixelate()
-        filter.pixelSize = 5
-         */
+
+        let filter = Contrast()
+        filter.contrast = 3
+         
         imagebase.AddFilter(filter)
         //let after = image
         let after = imagebase.Processing()

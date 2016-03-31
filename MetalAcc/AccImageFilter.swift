@@ -13,6 +13,33 @@ class AccImageFilter{
     var needPipeline:Bool?
     weak var base:AccImage?
     func applyFilter(){}
+    func addCommandWithZeroFactor(){
+        let commandBuffer = self.base!.commandQueue!.commandBuffer()
+        let commandEncoder = commandBuffer.computeCommandEncoder()
+        commandEncoder.setComputePipelineState(self.base!.pipelineState!)
+        commandEncoder.setTexture(self.base!.inTexture!, atIndex: 0)
+        commandEncoder.setTexture(self.base!.outTexture!, atIndex: 1)
+        commandEncoder.dispatchThreadgroups(self.base!.threadGroups!, threadsPerThreadgroup: self.base!.threadGroupCount)
+        commandEncoder.endEncoding()
+        commandBuffer.commit()
+        commandBuffer.waitUntilCompleted()
+    }
+    func addCommandWithOneFactor<T>(factor:T){
+        var factor = factor
+        let size = max(sizeof(T),16)
+        let commandBuffer = self.base!.commandQueue!.commandBuffer()
+        let commandEncoder = commandBuffer.computeCommandEncoder()
+        commandEncoder.setComputePipelineState(self.base!.pipelineState!)
+        commandEncoder.setTexture(self.base!.inTexture!, atIndex: 0)
+        commandEncoder.setTexture(self.base!.outTexture!, atIndex: 1)
+        let buffer = self.base!.device!.newBufferWithBytes(&factor, length: size, options: [MTLResourceOptions.StorageModeShared])
+        commandEncoder.setBuffer(buffer, offset: 0, atIndex: 0)
+        commandEncoder.dispatchThreadgroups(self.base!.threadGroups!, threadsPerThreadgroup: self.base!.threadGroupCount)
+        commandEncoder.endEncoding()
+        commandBuffer.commit()
+        commandBuffer.waitUntilCompleted()
+
+    }
 }
 
 class Pixelate:AccImageFilter{
@@ -22,17 +49,7 @@ class Pixelate:AccImageFilter{
         self.name = "Pixelate"
     }
     override func applyFilter() {
-        let commandBuffer = self.base!.commandQueue!.commandBuffer()
-        let commandEncoder = commandBuffer.computeCommandEncoder()
-        commandEncoder.setComputePipelineState(self.base!.pipelineState!)
-        commandEncoder.setTexture(self.base!.inTexture!, atIndex: 0)
-        commandEncoder.setTexture(self.base!.outTexture!, atIndex: 1)
-        let buffer = self.base!.device!.newBufferWithBytes(&pixelSize, length: sizeof(UInt), options: [MTLResourceOptions.StorageModeShared])
-        commandEncoder.setBuffer(buffer, offset: 0, atIndex: 0)
-        commandEncoder.dispatchThreadgroups(self.base!.threadGroups!, threadsPerThreadgroup: self.base!.threadGroupCount)
-        commandEncoder.endEncoding()
-        commandBuffer.commit()
-        commandBuffer.waitUntilCompleted()
+        addCommandWithOneFactor(pixelSize)
     }
 }
 
@@ -51,7 +68,7 @@ class GaussianBlur:AccImageFilter{
     }
 }
 
-class  Sobel: AccImageFilter {
+class Sobel: AccImageFilter {
     override init(){
         super.init()
         self.name = "ImageSobel"
@@ -63,95 +80,54 @@ class  Sobel: AccImageFilter {
         commandBuffer.commit()
         commandBuffer.waitUntilCompleted()
     }
-    
 }
 
 
 class Grayscale: AccImageFilter {
-    var factor:Float?
+    var grayscale:Float?
     override init(){
         super.init()
         self.name = "Grayscale"
     }
     override func applyFilter() {
-        let commandBuffer = self.base!.commandQueue!.commandBuffer()
-        let commandEncoder = commandBuffer.computeCommandEncoder()
-        commandEncoder.setComputePipelineState(self.base!.pipelineState!)
-        commandEncoder.setTexture(self.base!.inTexture!, atIndex: 0)
-        commandEncoder.setTexture(self.base!.outTexture!, atIndex: 1)
-        let buffer = self.base!.device!.newBufferWithBytes(&factor, length: sizeof(Float)*4, options: [MTLResourceOptions.StorageModeShared])//at lest 16
-        commandEncoder.setBuffer(buffer, offset: 0, atIndex: 0)
-        commandEncoder.dispatchThreadgroups(self.base!.threadGroups!, threadsPerThreadgroup: self.base!.threadGroupCount)
-        commandEncoder.endEncoding()
-        commandBuffer.commit()
-        commandBuffer.waitUntilCompleted()
+        addCommandWithOneFactor(grayscale)
     }
 
 }
 
 class Brightness: AccImageFilter {
-    var factor:Float?//0.0~1.0
+    var brightness:Float?//0.0~1.0
     override init(){
         super.init()
         self.name = "Brightness"
     }
     override func applyFilter() {
-        let commandBuffer = self.base!.commandQueue!.commandBuffer()
-        let commandEncoder = commandBuffer.computeCommandEncoder()
-        commandEncoder.setComputePipelineState(self.base!.pipelineState!)
-        commandEncoder.setTexture(self.base!.inTexture!, atIndex: 0)
-        commandEncoder.setTexture(self.base!.outTexture!, atIndex: 1)
-        let buffer = self.base!.device!.newBufferWithBytes(&factor, length: sizeof(Float)*4, options: [MTLResourceOptions.StorageModeShared])//at lest 16
-        commandEncoder.setBuffer(buffer, offset: 0, atIndex: 0)
-        commandEncoder.dispatchThreadgroups(self.base!.threadGroups!, threadsPerThreadgroup: self.base!.threadGroupCount)
-        commandEncoder.endEncoding()
-        commandBuffer.commit()
-        commandBuffer.waitUntilCompleted()
+        addCommandWithOneFactor(brightness)
     }
     
 }
 
 class Saturation: AccImageFilter {
-    var factor:Float?//0.0~1.0
+    var saturation:Float?//0.0~1.0
     override init(){
         super.init()
         self.name = "Saturation"
     }
     override func applyFilter() {
-        let commandBuffer = self.base!.commandQueue!.commandBuffer()
-        let commandEncoder = commandBuffer.computeCommandEncoder()
-        commandEncoder.setComputePipelineState(self.base!.pipelineState!)
-        commandEncoder.setTexture(self.base!.inTexture!, atIndex: 0)
-        commandEncoder.setTexture(self.base!.outTexture!, atIndex: 1)
-        let buffer = self.base!.device!.newBufferWithBytes(&factor, length: sizeof(Float)*4, options: [MTLResourceOptions.StorageModeShared])//at lest 16
-        commandEncoder.setBuffer(buffer, offset: 0, atIndex: 0)
-        commandEncoder.dispatchThreadgroups(self.base!.threadGroups!, threadsPerThreadgroup: self.base!.threadGroupCount)
-        commandEncoder.endEncoding()
-        commandBuffer.commit()
-        commandBuffer.waitUntilCompleted()
+        addCommandWithOneFactor(saturation)
     }
     
 }
 
 // Gamma ranges from 0.0 to 3.0, with 1.0 as the normal level
 class Gamma: AccImageFilter {
-    var factor:Float?//0.0~3.0
+    var gamma:Float?//0.0~3.0
     override init(){
         super.init()
         self.name = "Gamma"
     }
     override func applyFilter() {
-        let commandBuffer = self.base!.commandQueue!.commandBuffer()
-        let commandEncoder = commandBuffer.computeCommandEncoder()
-        commandEncoder.setComputePipelineState(self.base!.pipelineState!)
-        commandEncoder.setTexture(self.base!.inTexture!, atIndex: 0)
-        commandEncoder.setTexture(self.base!.outTexture!, atIndex: 1)
-        let buffer = self.base!.device!.newBufferWithBytes(&factor, length: sizeof(Float)*4, options: [MTLResourceOptions.StorageModeShared])//at lest 16
-        commandEncoder.setBuffer(buffer, offset: 0, atIndex: 0)
-        commandEncoder.dispatchThreadgroups(self.base!.threadGroups!, threadsPerThreadgroup: self.base!.threadGroupCount)
-        commandEncoder.endEncoding()
-        commandBuffer.commit()
-        commandBuffer.waitUntilCompleted()
+        addCommandWithOneFactor(Gamma)
     }
     
 }
@@ -162,17 +138,18 @@ class ColorInvert: AccImageFilter {
         self.name = "ColorInvert"
     }
     override func applyFilter() {
-        let commandBuffer = self.base!.commandQueue!.commandBuffer()
-        let commandEncoder = commandBuffer.computeCommandEncoder()
-        commandEncoder.setComputePipelineState(self.base!.pipelineState!)
-        commandEncoder.setTexture(self.base!.inTexture!, atIndex: 0)
-        commandEncoder.setTexture(self.base!.outTexture!, atIndex: 1)
-        commandEncoder.dispatchThreadgroups(self.base!.threadGroups!, threadsPerThreadgroup: self.base!.threadGroupCount)
-        commandEncoder.endEncoding()
-        commandBuffer.commit()
-        commandBuffer.waitUntilCompleted()
+        addCommandWithZeroFactor()
     }
 }
 
-
-
+//Contrast ranges from 0.0 to 4.0 (max contrast), with 1.0 as the normal level
+class Contrast: AccImageFilter {
+    var contrast:Float?//0.0~3.0
+    override init(){
+        super.init()
+        self.name = "Contrast"
+    }
+    override func applyFilter() {
+        addCommandWithOneFactor(contrast)
+    }
+}
