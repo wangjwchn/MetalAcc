@@ -16,7 +16,6 @@ class AccImage:AccBase{
     var pipelineState: MTLComputePipelineState?
     var threadGroups: MTLSize?
     var filter:AccImageFilter?
-
     
     func AddImage(image:UIImage){
         inTexture = textureFromImage(image)

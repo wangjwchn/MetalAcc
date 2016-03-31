@@ -185,3 +185,28 @@ class AccContrastFilter: AccImageFilter {
         addCommandWithOneFactor(contrast)
     }
 }
+
+//----
+
+class AccExposureFilter: AccImageFilter {
+    var exposure:Float?//0.0~3.0
+    override init(){
+        super.init()
+        self.name = "Exposure"
+    }
+    override func applyFilter() {
+        addCommandWithOneFactor(exposure)
+    }
+}
+
+
+class AccLuminanceThresholdFilter: AccImageFilter {
+    var threshold:Float?
+    override init(){
+        super.init()
+        self.name = "LuminanceThreshold"
+    }
+    override func applyFilter() {
+        addCommandWithOneFactor(threshold)
+    }
+}
