@@ -79,6 +79,12 @@ let outimage = accimage.Processing()
  
 ####AccContrastFilter: Adjusts the contrast of the image
  - contrast: The adjusted contrast (0.0 - 4.0, with 1.0 as the default)
+
+####AccExposureFilter: Adjusts the exposure of the image
+  - exposure: The adjusted exposure (-10.0 - 10.0, with 0.0 as the default)
+
+####AccLuminanceThresholdFilter: Pixels with a luminance above the threshold will appear white, and those below will be black
+  - threshold: The luminance threshold, from 0.0 to 1.0, with a default of 0.5
  
 #Contribution
 ####Follow these steps to add a new filter to this library:

@@ -189,7 +189,7 @@ class AccContrastFilter: AccImageFilter {
 //----
 
 class AccExposureFilter: AccImageFilter {
-    var exposure:Float?//0.0~3.0
+    var exposure:Float?
     override init(){
         super.init()
         self.name = "Exposure"
