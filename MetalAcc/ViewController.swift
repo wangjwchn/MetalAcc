@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,8 +21,8 @@ class ViewController: UIViewController {
         let imagebase = AccImage()
         imagebase.AddImage(image)
         
-        let filter = Brightness()
-        filter.brightness = 0.5
+        let filter = Saturation()
+        filter.factor = 0.5
         //filter.sigma  = 3.0
         /*
         let filter = Pixelate()

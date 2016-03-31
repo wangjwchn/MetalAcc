@@ -16,7 +16,7 @@ class AccImageFilter{
 }
 
 class Pixelate:AccImageFilter{
-    var pixelSize:UInt?
+    var pixelSize:UInt?//0~?
     override init(){
         super.init()
         self.name = "Pixelate"
@@ -37,7 +37,7 @@ class Pixelate:AccImageFilter{
 }
 
 class GaussianBlur:AccImageFilter{
-    var sigma:Float?
+    var sigma:Float?//0.0~10.0
     override init(){
         super.init()
         self.name = "GaussianBlur"
@@ -68,10 +68,10 @@ class  Sobel: AccImageFilter {
 
 
 class Grayscale: AccImageFilter {
-    var grayscaleFactor:Float?
+    var factor:Float?
     override init(){
         super.init()
-        self.name = "Saturation"
+        self.name = "Grayscale"
     }
     override func applyFilter() {
         let commandBuffer = self.base!.commandQueue!.commandBuffer()
@@ -79,7 +79,7 @@ class Grayscale: AccImageFilter {
         commandEncoder.setComputePipelineState(self.base!.pipelineState!)
         commandEncoder.setTexture(self.base!.inTexture!, atIndex: 0)
         commandEncoder.setTexture(self.base!.outTexture!, atIndex: 1)
-        let buffer = self.base!.device!.newBufferWithBytes(&grayscaleFactor, length: sizeof(Float)*4, options: [MTLResourceOptions.StorageModeShared])//at lest 16
+        let buffer = self.base!.device!.newBufferWithBytes(&factor, length: sizeof(Float)*4, options: [MTLResourceOptions.StorageModeShared])//at lest 16
         commandEncoder.setBuffer(buffer, offset: 0, atIndex: 0)
         commandEncoder.dispatchThreadgroups(self.base!.threadGroups!, threadsPerThreadgroup: self.base!.threadGroupCount)
         commandEncoder.endEncoding()
@@ -90,10 +90,10 @@ class Grayscale: AccImageFilter {
 }
 
 class Brightness: AccImageFilter {
-    var brightness:Float?
+    var factor:Float?//0.0~1.0
     override init(){
         super.init()
-        self.name = "Luminance"
+        self.name = "Brightness"
     }
     override func applyFilter() {
         let commandBuffer = self.base!.commandQueue!.commandBuffer()
@@ -101,7 +101,7 @@ class Brightness: AccImageFilter {
         commandEncoder.setComputePipelineState(self.base!.pipelineState!)
         commandEncoder.setTexture(self.base!.inTexture!, atIndex: 0)
         commandEncoder.setTexture(self.base!.outTexture!, atIndex: 1)
-        let buffer = self.base!.device!.newBufferWithBytes(&brightness, length: sizeof(Float)*4, options: [MTLResourceOptions.StorageModeShared])//at lest 16
+        let buffer = self.base!.device!.newBufferWithBytes(&factor, length: sizeof(Float)*4, options: [MTLResourceOptions.StorageModeShared])//at lest 16
         commandEncoder.setBuffer(buffer, offset: 0, atIndex: 0)
         commandEncoder.dispatchThreadgroups(self.base!.threadGroups!, threadsPerThreadgroup: self.base!.threadGroupCount)
         commandEncoder.endEncoding()
@@ -110,4 +110,49 @@ class Brightness: AccImageFilter {
     }
     
 }
+
+class Saturation: AccImageFilter {
+    var factor:Float?//0.0~1.0
+    override init(){
+        super.init()
+        self.name = "Saturation"
+    }
+    override func applyFilter() {
+        let commandBuffer = self.base!.commandQueue!.commandBuffer()
+        let commandEncoder = commandBuffer.computeCommandEncoder()
+        commandEncoder.setComputePipelineState(self.base!.pipelineState!)
+        commandEncoder.setTexture(self.base!.inTexture!, atIndex: 0)
+        commandEncoder.setTexture(self.base!.outTexture!, atIndex: 1)
+        let buffer = self.base!.device!.newBufferWithBytes(&factor, length: sizeof(Float)*4, options: [MTLResourceOptions.StorageModeShared])//at lest 16
+        commandEncoder.setBuffer(buffer, offset: 0, atIndex: 0)
+        commandEncoder.dispatchThreadgroups(self.base!.threadGroups!, threadsPerThreadgroup: self.base!.threadGroupCount)
+        commandEncoder.endEncoding()
+        commandBuffer.commit()
+        commandBuffer.waitUntilCompleted()
+    }
+    
+}
+
+class Gamma: AccImageFilter {
+    var factor:Float?//0.0~1.0
+    override init(){
+        super.init()
+        self.name = "Gamma"
+    }
+    override func applyFilter() {
+        let commandBuffer = self.base!.commandQueue!.commandBuffer()
+        let commandEncoder = commandBuffer.computeCommandEncoder()
+        commandEncoder.setComputePipelineState(self.base!.pipelineState!)
+        commandEncoder.setTexture(self.base!.inTexture!, atIndex: 0)
+        commandEncoder.setTexture(self.base!.outTexture!, atIndex: 1)
+        let buffer = self.base!.device!.newBufferWithBytes(&factor, length: sizeof(Float)*4, options: [MTLResourceOptions.StorageModeShared])//at lest 16
+        commandEncoder.setBuffer(buffer, offset: 0, atIndex: 0)
+        commandEncoder.dispatchThreadgroups(self.base!.threadGroups!, threadsPerThreadgroup: self.base!.threadGroupCount)
+        commandEncoder.endEncoding()
+        commandBuffer.commit()
+        commandBuffer.waitUntilCompleted()
+    }
+    
+}
+
 
