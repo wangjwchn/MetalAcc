@@ -232,3 +232,16 @@ class AccWhiteBalanceFilter: AccImageFilter {
         addCommandWithFactor([temperature,tint])
     }
 }
+
+class AccChromaKeyFilter: AccImageFilter {
+    var thresholdSensitivity:Float?
+    var smoothing:Float?
+    var colorToReplace:(R:Float,G:Float,B:Float)?
+    override init(){
+        super.init()
+        self.name = "ChromaKey"
+    }
+    override func applyFilter() {
+    addCommandWithFactor([thresholdSensitivity,smoothing,colorToReplace?.R,colorToReplace?.G,colorToReplace?.B])
+    }
+}
