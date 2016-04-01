@@ -112,18 +112,7 @@ class AccGrayscaleFilter: AccImageFilter {
 
 
 
-/*
- AccColorInvertFilter: Inverts the colors of an image
-*/
-class AccColorInvertFilter: AccImageFilter {
-    override init(){
-        super.init()
-        self.name = "ColorInvert"
-    }
-    override func applyFilter() {
-        addCommandWithoutFactor()
-    }
-}
+
 
 /*
  AccLuminanceThresholdFilter: Pixels with a luminance above the threshold will appear white, and those below will be black
