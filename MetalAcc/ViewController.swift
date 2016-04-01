@@ -20,9 +20,8 @@ class ViewController: UIViewController {
         let accimage = AccImage()
         accimage.AddImage(inimage)
         
-
-        let filter = AccBrightnessFilter()
-        filter.brightness = -0.8
+        let filter = AccOpacityFilter()
+        filter.opacity = 0.3
         accimage.AddFilter(filter)
         
         let outimage = accimage.Processing()

@@ -46,7 +46,7 @@ kernel void Brightness(texture2d<float, access::read> inTexture [[texture(0)]],
     float4 outColor(inColor.r + *factor,
                     inColor.g + *factor,
                     inColor.b + *factor,
-                    inColor.w);
+                    inColor.a);
     outTexture.write(outColor, gid);
 }
 
@@ -71,7 +71,7 @@ kernel void Gamma(texture2d<float, access::read> inTexture [[texture(0)]],
     float4 outColor(pow(inColor.r,*factor),
                     pow(inColor.g,*factor),
                     pow(inColor.b,*factor),
-                    inColor.w);
+                    inColor.a);
 
     outTexture.write(outColor, gid);
 }
@@ -84,7 +84,7 @@ kernel void ColorInvert(texture2d<float, access::read> inTexture [[texture(0)]],
     float4 outColor(1.0 - inColor.r,
                     1.0 - inColor.g,
                     1.0 - inColor.b,
-                    inColor.w);
+                    inColor.a);
     
     outTexture.write(outColor, gid);
 }
@@ -98,7 +98,7 @@ kernel void Contrast(texture2d<float, access::read> inTexture [[texture(0)]],
     float4 outColor((inColor.r - 0.5) * (*factor + 0.5),
                     (inColor.g - 0.5) * (*factor + 0.5),
                     (inColor.b - 0.5) * (*factor + 0.5),
-                    inColor.w);
+                    inColor.a);
     
     outTexture.write(outColor, gid);
 }
@@ -112,7 +112,7 @@ kernel void Exposure(texture2d<float, access::read> inTexture [[texture(0)]],
     float4 outColor(inColor.r * pow(2.0, *factor),
                     inColor.g * pow(2.0, *factor),
                     inColor.b * pow(2.0, *factor),
-                    inColor.w);
+                    inColor.a);
     
     outTexture.write(outColor, gid);
 }
@@ -203,4 +203,15 @@ kernel void SolidColor(texture2d<float, access::read> inTexture [[texture(0)]],
     float4 outColor = float4(*R,*G,*B,*A);
     outTexture.write(outColor, gid);
 }
+
+kernel void Opacity(texture2d<float, access::read> inTexture [[texture(0)]],
+                       texture2d<float, access::write> outTexture [[texture(1)]],
+                       device float *opacity [[buffer(0)]],
+                       uint2 gid [[thread_position_in_grid]])
+{
+    float4 inColor = inTexture.read(gid);
+    float4 outColor = float4(inColor.rgb,inColor.a * *opacity);
+    outTexture.write(outColor, gid);
+}
+
 

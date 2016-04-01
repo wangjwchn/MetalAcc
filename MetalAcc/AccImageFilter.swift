@@ -256,3 +256,16 @@ class AccSolidColorGenerator: AccImageFilter {
         addCommandWithFactor([color!.R,color!.G,color!.B,color!.A])
     }
 }
+
+class AccOpacityFilter: AccImageFilter {
+    var opacity:Float?
+    override init(){
+        super.init()
+        self.name = "Opacity"
+    }
+    override func applyFilter() {
+        addCommandWithFactor([opacity])
+    }
+}
+
+
