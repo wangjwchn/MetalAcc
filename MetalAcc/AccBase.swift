@@ -7,11 +7,11 @@
 //
 
 import MetalKit
-class AccBase{
-    var device:MTLDevice? = nil
-    var library:MTLLibrary? = nil
-    var commandQueue:MTLCommandQueue? = nil
-    init(){
+public class AccBase{
+    public var device:MTLDevice? = nil
+    public var library:MTLLibrary? = nil
+    public var commandQueue:MTLCommandQueue? = nil
+    public init(){
         device = MTLCreateSystemDefaultDevice()
         library = self.device!.newDefaultLibrary()
         commandQueue = self.device!.newCommandQueue()

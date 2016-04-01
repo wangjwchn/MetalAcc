@@ -7,24 +7,27 @@
 //
 
 import MetalKit
-class AccImage:AccBase{
+public class AccImage:AccBase{
     
+    public let threadGroupCount = MTLSizeMake(16, 16, 1)
+    public var inTexture: MTLTexture? = nil
+    public var outTexture: MTLTexture? = nil
+    public var pipelineState: MTLComputePipelineState? = nil
+    public var threadGroups: MTLSize? = nil
+    public var filter:AccImageFilter? = nil
     
-    let threadGroupCount = MTLSizeMake(16, 16, 1)
-    var inTexture: MTLTexture?
-    var outTexture: MTLTexture?
-    var pipelineState: MTLComputePipelineState?
-    var threadGroups: MTLSize?
-    var filter:AccImageFilter?
+    override public init() {
+        super.init()
+    }
     
-    func AddImage(image:UIImage){
+    public func AddImage(image:UIImage){
         inTexture = textureFromImage(image)
         let textureDescriptor = MTLTextureDescriptor.texture2DDescriptorWithPixelFormat(inTexture!.pixelFormat, width: inTexture!.width, height: inTexture!.height, mipmapped: false)
         outTexture = self.device!.newTextureWithDescriptor(textureDescriptor)
         threadGroups = MTLSizeMake(Int(self.inTexture!.width) / self.threadGroupCount.width, Int(self.inTexture!.height) / self.threadGroupCount.height, 1)
     }
     
-    func AddFilter(filter:AccImageFilter){
+    public func AddFilter(filter:AccImageFilter){
         if let function = self.library!.newFunctionWithName(filter.name!){
         do {
             self.pipelineState = try device!.newComputePipelineStateWithFunction(function)
@@ -37,12 +40,12 @@ class AccImage:AccBase{
         self.filter?.base = self
     }
     
-    func Processing()->UIImage{
+    public func Processing()->UIImage{
         self.filter?.applyFilter()
         return imageFromTexture(self.outTexture!)
     }
 
-    func textureFromImage(image: UIImage) -> MTLTexture {
+    private func textureFromImage(image: UIImage) -> MTLTexture {
         let imageRef: CGImageRef = image.CGImage!
         let width: Int = CGImageGetWidth(imageRef)
         let height: Int = CGImageGetHeight(imageRef)
@@ -68,7 +71,7 @@ class AccImage:AccBase{
         
     }
     
-    func imageFromTexture(texture: MTLTexture) -> UIImage {
+    private func imageFromTexture(texture: MTLTexture) -> UIImage {
         let bytesPerPixel: Int = 4
         let imageByteCount = texture.width * texture.height * bytesPerPixel
         let bytesPerRow = texture.width * bytesPerPixel

@@ -7,11 +7,12 @@
 //
 
 import MetalKit
-class AccImageFilter{
-    var name:String?
-    weak var base:AccImage?
-    func applyFilter(){}
-    func addCommandWithoutFactor(){
+public class AccImageFilter{
+    public var name:String? = nil
+    public weak var base:AccImage? = nil
+    public init() { }
+    public func applyFilter(){}
+    public func addCommandWithoutFactor(){
         let commandBuffer = self.base!.commandQueue!.commandBuffer()
         let commandEncoder = commandBuffer.computeCommandEncoder()
         commandEncoder.setComputePipelineState(self.base!.pipelineState!)
@@ -22,7 +23,7 @@ class AccImageFilter{
         commandBuffer.commit()
         commandBuffer.waitUntilCompleted()
     }
-    func addCommandWithFactor<T>(factors:[T]){
+    public func addCommandWithFactor<T>(factors:[T]){
         let commandBuffer = self.base!.commandQueue!.commandBuffer()
         let commandEncoder = commandBuffer.computeCommandEncoder()
         commandEncoder.setComputePipelineState(self.base!.pipelineState!)
