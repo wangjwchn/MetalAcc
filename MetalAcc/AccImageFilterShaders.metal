@@ -232,4 +232,18 @@ kernel void HighlightShadow(texture2d<float, access::read> inTexture [[texture(0
     outTexture.write(outColor, gid);
 }
 
-
+kernel void HistogramGenerator(texture2d<float, access::read> inTexture [[texture(0)]],
+                    texture2d<float, access::write> outTexture [[texture(1)]],
+                    device float *height [[buffer(0)]],
+                    device float *R [[buffer(1)]],
+                    device float *G [[buffer(2)]],
+                    device float *B [[buffer(3)]],
+                    device float *A [[buffer(4)]],
+                    uint2 gid [[thread_position_in_grid]])
+{
+    float4 backgroundColor = float4(*R,*G,*B,*A);
+    float3 colorChannels = inTexture.read(gid).rgb;
+    float4 heightTest = float4(step(*height, colorChannels), 1.0);
+    float4 outColor = mix(backgroundColor, heightTest, heightTest.r + heightTest.g + heightTest.b);
+    outTexture.write(outColor, gid);
+}

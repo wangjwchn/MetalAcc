@@ -59,11 +59,11 @@ class AccPixelateFilter:AccImageFilter{
 
 /*
  AccGaussianBlurFilter:Gaussian blur
- - sigma:The standard deviation of gaussian blur filter
+ - sigma:The standard deviation of gaussian blur filter(0.0 ~ 10.0, with 0.0 as the default)
 */
  
 class AccGaussianBlurFilter:AccImageFilter{
-    var sigma:Float?//0.0~10.0
+    var sigma:Float?
     override init(){
         super.init()
         self.name = "GaussianBlur"
@@ -115,7 +115,7 @@ class AccGrayscaleFilter: AccImageFilter {
  - brightness: The adjusted brightness (-1.0 ~ 1.0, with 0.0 as the default)
 */
 class AccBrightnessFilter: AccImageFilter {
-    var brightness:Float?//0.0~1.0
+    var brightness:Float?
     override init(){
         super.init()
         self.name = "Brightness"
@@ -132,7 +132,7 @@ class AccBrightnessFilter: AccImageFilter {
  - saturation: The degree of saturation or desaturation to apply to the image (0.0 ~ 2.0, with 1.0 as the default)
 */
 class AccSaturationFilter: AccImageFilter {
-    var saturation:Float?//0.0~1.0
+    var saturation:Float?
     override init(){
         super.init()
         self.name = "Saturation"
@@ -148,7 +148,7 @@ class AccSaturationFilter: AccImageFilter {
  - gamma: The gamma adjustment to apply (0.0 ~ 3.0, with 1.0 as the default)
 */
 class AccGammaFilter: AccImageFilter {
-    var gamma:Float?//0.0~3.0
+    var gamma:Float?
     override init(){
         super.init()
         self.name = "Gamma"
@@ -177,7 +177,7 @@ class AccColorInvertFilter: AccImageFilter {
  - contrast: The adjusted contrast (0.0 ~ 4.0, with 1.0 as the default)
 */
 class AccContrastFilter: AccImageFilter {
-    var contrast:Float?//0.0~3.0
+    var contrast:Float?
     override init(){
         super.init()
         self.name = "Contrast"
@@ -187,6 +187,10 @@ class AccContrastFilter: AccImageFilter {
     }
 }
 
+/*
+ AccExposureFilter: Adjusts the exposure of the image
+ - exposure: The adjusted exposure (-10.0 - 10.0, with 0.0 as the default)
+*/
 class AccExposureFilter: AccImageFilter {
     var exposure:Float?
     override init(){
@@ -198,6 +202,10 @@ class AccExposureFilter: AccImageFilter {
     }
 }
 
+/*
+ AccLuminanceThresholdFilter: Pixels with a luminance above the threshold will appear white, and those below will be black
+ - threshold: The luminance threshold, from 0.0 to 1.0, with a default of 0.5
+*/
 class AccLuminanceThresholdFilter: AccImageFilter {
     var threshold:Float?
     override init(){
@@ -280,4 +288,15 @@ class AccHighlightShadowFilter: AccImageFilter {
     }
 }
 
+class AccHistogramGenerator: AccImageFilter {
+    var height:Float?
+    var backgroundColor:(R:Float,G:Float,B:Float,A:Float)?
+    override init(){
+        super.init()
+        self.name = "HistogramGenerator"
+    }
+    override func applyFilter() {
+    addCommandWithFactor([height,backgroundColor!.R,backgroundColor!.G,backgroundColor!.B,backgroundColor!.A])
+    }
+}
 
