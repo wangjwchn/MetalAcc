@@ -17,5 +17,4 @@ class AccGrayscaleFilter: AccImageFilter {
     override func applyFilter() {
         addCommandWithFactor([grayscale])
     }
-    
 }
