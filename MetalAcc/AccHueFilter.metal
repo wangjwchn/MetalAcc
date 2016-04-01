@@ -28,7 +28,6 @@ kernel void Hue(texture2d<float, access::read> inTexture [[texture(0)]],
     float   I      = dot (inColor, kRGBToI);
     float   Q      = dot (inColor, kRGBToQ);
     
-    
     // Calculate the hue and chroma
     float   hue     = atan2(Q, I);
     float   chroma  = sqrt (I * I + Q * Q);
