@@ -33,6 +33,12 @@
 		2824A1471CAE6E1E00788020 /* AccLuminanceThresholdFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 2824A1461CAE6E1E00788020 /* AccLuminanceThresholdFilter.metal */; };
 		2824A14D1CAE6F3F00788020 /* AccHighlightShadowFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2824A14C1CAE6F3F00788020 /* AccHighlightShadowFilter.swift */; };
 		2824A14F1CAE6F4600788020 /* AccHighlightShadowFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 2824A14E1CAE6F4600788020 /* AccHighlightShadowFilter.metal */; };
+		2824A1511CAE6F9C00788020 /* AccOpacityFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2824A1501CAE6F9C00788020 /* AccOpacityFilter.swift */; };
+		2824A1531CAE6FA900788020 /* AccOpacityFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 2824A1521CAE6FA900788020 /* AccOpacityFilter.metal */; };
+		2824A1551CAE6FF400788020 /* AccSolidColorGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2824A1541CAE6FF400788020 /* AccSolidColorGenerator.swift */; };
+		2824A1571CAE6FF900788020 /* AccSolidColorGenerator.metal in Sources */ = {isa = PBXBuildFile; fileRef = 2824A1561CAE6FF900788020 /* AccSolidColorGenerator.metal */; };
+		2824A1591CAE702F00788020 /* AccChromaKeyFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2824A1581CAE702F00788020 /* AccChromaKeyFilter.swift */; };
+		2824A15B1CAE703800788020 /* AccChromaKeyFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 2824A15A1CAE703800788020 /* AccChromaKeyFilter.metal */; };
 		287A828E1CAA72D900CD5721 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287A828D1CAA72D900CD5721 /* AppDelegate.swift */; };
 		287A82901CAA72D900CD5721 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287A828F1CAA72D900CD5721 /* ViewController.swift */; };
 		287A82931CAA72D900CD5721 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 287A82911CAA72D900CD5721 /* Main.storyboard */; };
@@ -79,6 +85,12 @@
 		2824A1461CAE6E1E00788020 /* AccLuminanceThresholdFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = AccLuminanceThresholdFilter.metal; sourceTree = "<group>"; };
 		2824A14C1CAE6F3F00788020 /* AccHighlightShadowFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccHighlightShadowFilter.swift; sourceTree = "<group>"; };
 		2824A14E1CAE6F4600788020 /* AccHighlightShadowFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = AccHighlightShadowFilter.metal; sourceTree = "<group>"; };
+		2824A1501CAE6F9C00788020 /* AccOpacityFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccOpacityFilter.swift; sourceTree = "<group>"; };
+		2824A1521CAE6FA900788020 /* AccOpacityFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = AccOpacityFilter.metal; sourceTree = "<group>"; };
+		2824A1541CAE6FF400788020 /* AccSolidColorGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccSolidColorGenerator.swift; sourceTree = "<group>"; };
+		2824A1561CAE6FF900788020 /* AccSolidColorGenerator.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = AccSolidColorGenerator.metal; sourceTree = "<group>"; };
+		2824A1581CAE702F00788020 /* AccChromaKeyFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccChromaKeyFilter.swift; sourceTree = "<group>"; };
+		2824A15A1CAE703800788020 /* AccChromaKeyFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = AccChromaKeyFilter.metal; sourceTree = "<group>"; };
 		287A828A1CAA72D900CD5721 /* MetalAcc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalAcc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		287A828D1CAA72D900CD5721 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		287A828F1CAA72D900CD5721 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -206,6 +218,12 @@
 				2824A1461CAE6E1E00788020 /* AccLuminanceThresholdFilter.metal */,
 				2824A14C1CAE6F3F00788020 /* AccHighlightShadowFilter.swift */,
 				2824A14E1CAE6F4600788020 /* AccHighlightShadowFilter.metal */,
+				2824A1501CAE6F9C00788020 /* AccOpacityFilter.swift */,
+				2824A1521CAE6FA900788020 /* AccOpacityFilter.metal */,
+				2824A1541CAE6FF400788020 /* AccSolidColorGenerator.swift */,
+				2824A1561CAE6FF900788020 /* AccSolidColorGenerator.metal */,
+				2824A1581CAE702F00788020 /* AccChromaKeyFilter.swift */,
+				2824A15A1CAE703800788020 /* AccChromaKeyFilter.metal */,
 			);
 			name = "Color processing";
 			sourceTree = "<group>";
@@ -284,14 +302,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				2824A12F1CAE5D5A00788020 /* AccMonochromeFilter.swift in Sources */,
+				2824A1551CAE6FF400788020 /* AccSolidColorGenerator.swift in Sources */,
 				2824A1251CAE546100788020 /* AccBrightnessFilter.swift in Sources */,
 				287E47D01CAE51EB00DFB82A /* AccExposureFilter.metal in Sources */,
 				287E47C81CAE4D1600DFB82A /* AccBrightnessFilter.metal in Sources */,
 				287E47D21CAE524900DFB82A /* AccContrastFilter.swift in Sources */,
 				2824A11D1CAE539200788020 /* AccGammaFilter.swift in Sources */,
 				2824A13F1CAE6D7100788020 /* AccColorInvert.metal in Sources */,
+				2824A1511CAE6F9C00788020 /* AccOpacityFilter.swift in Sources */,
 				2824A1411CAE6DC700788020 /* AccGrayscaleFilter.swift in Sources */,
 				2824A1271CAE594F00788020 /* AccRGBFilter.swift in Sources */,
+				2824A1591CAE702F00788020 /* AccChromaKeyFilter.swift in Sources */,
 				2824A1231CAE540F00788020 /* AccColorMatrixFilter.metal in Sources */,
 				287A82901CAA72D900CD5721 /* ViewController.swift in Sources */,
 				2824A1391CAE6B2D00788020 /* AccHazeFilter.metal in Sources */,
@@ -299,6 +320,7 @@
 				2824A1211CAE540300788020 /* AccColorMatrixFilter.swift in Sources */,
 				287A828E1CAA72D900CD5721 /* AppDelegate.swift in Sources */,
 				2824A13D1CAE6D6100788020 /* AccColorInvert.swift in Sources */,
+				2824A1571CAE6FF900788020 /* AccSolidColorGenerator.metal in Sources */,
 				2824A1331CAE5F1500788020 /* AccFalseColorFilter.swift in Sources */,
 				287E47CC1CAE4DC200DFB82A /* AccImageLevelsFilter.swift in Sources */,
 				287E47CA1CAE4DB700DFB82A /* AccImageLevelsFilter.metal in Sources */,
@@ -309,9 +331,11 @@
 				2824A13B1CAE6C8B00788020 /* AccSepiaFilter.swift in Sources */,
 				28C6F7DA1CABA479002E59F7 /* AccImageFilterShaders.metal in Sources */,
 				28C6F7D61CAB736D002E59F7 /* AccImage.swift in Sources */,
+				2824A15B1CAE703800788020 /* AccChromaKeyFilter.metal in Sources */,
 				287E47CE1CAE51E200DFB82A /* AccExposureFilter.swift in Sources */,
 				2824A1451CAE6E1400788020 /* AccLuminanceThresholdFilter.swift in Sources */,
 				2824A12B1CAE5AC400788020 /* AccHueFilter.swift in Sources */,
+				2824A1531CAE6FA900788020 /* AccOpacityFilter.metal in Sources */,
 				2824A1471CAE6E1E00788020 /* AccLuminanceThresholdFilter.metal in Sources */,
 				2824A12D1CAE5ACC00788020 /* AccHueFilter.metal in Sources */,
 				2824A1371CAE6B2200788020 /* AccHazeFilter.swift in Sources */,

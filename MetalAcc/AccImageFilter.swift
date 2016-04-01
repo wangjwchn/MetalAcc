@@ -126,40 +126,9 @@ class AccWhiteBalanceFilter: AccImageFilter {
     }
 }
 
-class AccChromaKeyFilter: AccImageFilter {
-    var thresholdSensitivity:Float?
-    var smoothing:Float?
-    var colorToReplace:(R:Float,G:Float,B:Float)?
-    override init(){
-        super.init()
-        self.name = "ChromaKey"
-    }
-    override func applyFilter() {
-    addCommandWithFactor([thresholdSensitivity,smoothing,colorToReplace?.R,colorToReplace?.G,colorToReplace?.B])
-    }
-}
 
-class AccSolidColorGenerator: AccImageFilter {
-    var color:(R:Float,G:Float,B:Float,A:Float)?
-    override init(){
-        super.init()
-        self.name = "SolidColor"
-    }
-    override func applyFilter() {
-        addCommandWithFactor([color!.R,color!.G,color!.B,color!.A])
-    }
-}
 
-class AccOpacityFilter: AccImageFilter {
-    var opacity:Float?
-    override init(){
-        super.init()
-        self.name = "Opacity"
-    }
-    override func applyFilter() {
-        addCommandWithFactor([opacity])
-    }
-}
+
 
 
 
