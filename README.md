@@ -155,7 +155,7 @@ let outimage = accimage.Processing()
 - **AccLuminanceThresholdFilter**: Pixels with a luminance above the threshold will appear white, and those below will be black
   - *threshold*: The luminance threshold, from 0.0 to 1.0, with a default of 0.5
 
- - **AccLuminanceThresholdFilter**: Pixels with a luminance above the threshold will appear white, and those below will be black 
+- **AccLuminanceThresholdFilter**: Pixels with a luminance above the threshold will appear white, and those below will be black 
   - *rangeReduction*: The degree to reduce the luminance range, from 0.0 to 1.0. Default is 0.6.
 
 <!-- 
