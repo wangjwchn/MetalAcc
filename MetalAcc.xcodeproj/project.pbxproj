@@ -16,6 +16,8 @@
 		2824A1251CAE546100788020 /* AccBrightnessFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2824A1241CAE546100788020 /* AccBrightnessFilter.swift */; };
 		2824A1271CAE594F00788020 /* AccRGBFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2824A1261CAE594F00788020 /* AccRGBFilter.swift */; };
 		2824A1291CAE595700788020 /* AccRGBFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 2824A1281CAE595700788020 /* AccRGBFilter.metal */; };
+		2824A12B1CAE5AC400788020 /* AccHueFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2824A12A1CAE5AC400788020 /* AccHueFilter.swift */; };
+		2824A12D1CAE5ACC00788020 /* AccHueFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 2824A12C1CAE5ACC00788020 /* AccHueFilter.metal */; };
 		287A828E1CAA72D900CD5721 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287A828D1CAA72D900CD5721 /* AppDelegate.swift */; };
 		287A82901CAA72D900CD5721 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287A828F1CAA72D900CD5721 /* ViewController.swift */; };
 		287A82931CAA72D900CD5721 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 287A82911CAA72D900CD5721 /* Main.storyboard */; };
@@ -45,6 +47,8 @@
 		2824A1241CAE546100788020 /* AccBrightnessFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccBrightnessFilter.swift; sourceTree = "<group>"; };
 		2824A1261CAE594F00788020 /* AccRGBFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccRGBFilter.swift; sourceTree = "<group>"; };
 		2824A1281CAE595700788020 /* AccRGBFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = AccRGBFilter.metal; sourceTree = "<group>"; };
+		2824A12A1CAE5AC400788020 /* AccHueFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccHueFilter.swift; sourceTree = "<group>"; };
+		2824A12C1CAE5ACC00788020 /* AccHueFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = AccHueFilter.metal; sourceTree = "<group>"; };
 		287A828A1CAA72D900CD5721 /* MetalAcc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalAcc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		287A828D1CAA72D900CD5721 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		287A828F1CAA72D900CD5721 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +159,8 @@
 				2824A1221CAE540F00788020 /* AccColorMatrixFilter.metal */,
 				2824A1261CAE594F00788020 /* AccRGBFilter.swift */,
 				2824A1281CAE595700788020 /* AccRGBFilter.metal */,
+				2824A12A1CAE5AC400788020 /* AccHueFilter.swift */,
+				2824A12C1CAE5ACC00788020 /* AccHueFilter.metal */,
 			);
 			name = "Color processing";
 			sourceTree = "<group>";
@@ -249,6 +255,8 @@
 				28C6F7DA1CABA479002E59F7 /* AccImageFilterShaders.metal in Sources */,
 				28C6F7D61CAB736D002E59F7 /* AccImage.swift in Sources */,
 				287E47CE1CAE51E200DFB82A /* AccExposureFilter.swift in Sources */,
+				2824A12B1CAE5AC400788020 /* AccHueFilter.swift in Sources */,
+				2824A12D1CAE5ACC00788020 /* AccHueFilter.metal in Sources */,
 				2824A11B1CAE534700788020 /* AccSaturationFilter.swift in Sources */,
 				287E47D41CAE525500DFB82A /* AccContrastFilter.metal in Sources */,
 				2824A1191CAE534100788020 /* AccSaturationFilter.metal in Sources */,

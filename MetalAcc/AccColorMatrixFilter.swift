@@ -6,7 +6,7 @@
 //  Copyright © 2016年 JW. All rights reserved.
 //
 /*
- GPUImageColorMatrixFilter: Transforms the colors of an image by applying a matrix to them
+ AccColorMatrixFilter: Transforms the colors of an image by applying a matrix to them
 
  - colorMatrix: A 4x4 matrix used to transform each color in an image
  - intensity: The degree to which the new transformed color replaces the original color for each pixel
