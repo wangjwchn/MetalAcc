@@ -21,3 +21,4 @@ kernel void LuminanceRange(texture2d<float, access::read> inTexture [[texture(0)
     outTexture.write(outColor, gid);
 }
 
+
