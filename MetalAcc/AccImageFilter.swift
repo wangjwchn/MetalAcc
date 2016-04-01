@@ -10,7 +10,6 @@ import MetalKit
 import MetalPerformanceShaders
 class AccImageFilter{
     var name:String?
-    var needPipeline:Bool?
     weak var base:AccImage?
     func applyFilter(){}
     func addCommandWithZeroFactor(){
@@ -38,7 +37,6 @@ class AccImageFilter{
         commandEncoder.endEncoding()
         commandBuffer.commit()
         commandBuffer.waitUntilCompleted()
-
     }
 }
 
@@ -185,8 +183,6 @@ class AccContrastFilter: AccImageFilter {
         addCommandWithOneFactor(contrast)
     }
 }
-
-//----
 
 class AccExposureFilter: AccImageFilter {
     var exposure:Float?
