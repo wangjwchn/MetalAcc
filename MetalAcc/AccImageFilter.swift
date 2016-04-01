@@ -12,7 +12,7 @@ class AccImageFilter{
     var name:String?
     weak var base:AccImage?
     func applyFilter(){}
-    func addCommandWithZeroFactor(){
+    func addCommandWithoutFactor(){
         let commandBuffer = self.base!.commandQueue!.commandBuffer()
         let commandEncoder = commandBuffer.computeCommandEncoder()
         commandEncoder.setComputePipelineState(self.base!.pipelineState!)
@@ -23,16 +23,18 @@ class AccImageFilter{
         commandBuffer.commit()
         commandBuffer.waitUntilCompleted()
     }
-    func addCommandWithOneFactor<T>(factor:T){
-        var factor = factor
-        let size = max(sizeof(T),16)
+    func addCommandWithFactor<T>(factors:[T]){
         let commandBuffer = self.base!.commandQueue!.commandBuffer()
         let commandEncoder = commandBuffer.computeCommandEncoder()
         commandEncoder.setComputePipelineState(self.base!.pipelineState!)
         commandEncoder.setTexture(self.base!.inTexture!, atIndex: 0)
         commandEncoder.setTexture(self.base!.outTexture!, atIndex: 1)
-        let buffer = self.base!.device!.newBufferWithBytes(&factor, length: size, options: [MTLResourceOptions.StorageModeShared])
-        commandEncoder.setBuffer(buffer, offset: 0, atIndex: 0)
+        for i in 0..<factors.count{
+            var factor = factors[i]
+            let size = max(sizeof(T),16)
+            let buffer = self.base!.device!.newBufferWithBytes(&factor, length: size, options: [MTLResourceOptions.StorageModeShared])
+            commandEncoder.setBuffer(buffer, offset: 0, atIndex: i)
+        }
         commandEncoder.dispatchThreadgroups(self.base!.threadGroups!, threadsPerThreadgroup: self.base!.threadGroupCount)
         commandEncoder.endEncoding()
         commandBuffer.commit()
@@ -51,7 +53,7 @@ class AccPixelateFilter:AccImageFilter{
         self.name = "Pixelate"
     }
     override func applyFilter() {
-        addCommandWithOneFactor(pixelSize)
+        addCommandWithFactor([pixelSize])
     }
 }
 
@@ -103,7 +105,7 @@ class AccGrayscaleFilter: AccImageFilter {
         self.name = "Grayscale"
     }
     override func applyFilter() {
-        addCommandWithOneFactor(grayscale)
+        addCommandWithFactor([grayscale])
     }
 
 }
@@ -119,7 +121,8 @@ class AccBrightnessFilter: AccImageFilter {
         self.name = "Brightness"
     }
     override func applyFilter() {
-        addCommandWithOneFactor(brightness)
+        //addCommandWithOneFactor(brightness)
+        addCommandWithFactor([brightness,0.8])
     }
     
 }
@@ -135,7 +138,7 @@ class AccSaturationFilter: AccImageFilter {
         self.name = "Saturation"
     }
     override func applyFilter() {
-        addCommandWithOneFactor(saturation)
+        addCommandWithFactor([saturation])
     }
     
 }
@@ -151,7 +154,7 @@ class AccGammaFilter: AccImageFilter {
         self.name = "Gamma"
     }
     override func applyFilter() {
-        addCommandWithOneFactor(gamma)
+        addCommandWithFactor([gamma])
     }
     
 }
@@ -165,7 +168,7 @@ class AccColorInvertFilter: AccImageFilter {
         self.name = "ColorInvert"
     }
     override func applyFilter() {
-        addCommandWithZeroFactor()
+        addCommandWithoutFactor()
     }
 }
 
@@ -180,7 +183,7 @@ class AccContrastFilter: AccImageFilter {
         self.name = "Contrast"
     }
     override func applyFilter() {
-        addCommandWithOneFactor(contrast)
+        addCommandWithFactor([contrast])
     }
 }
 
@@ -191,7 +194,7 @@ class AccExposureFilter: AccImageFilter {
         self.name = "Exposure"
     }
     override func applyFilter() {
-        addCommandWithOneFactor(exposure)
+        addCommandWithFactor([exposure])
     }
 }
 
@@ -202,7 +205,7 @@ class AccLuminanceThresholdFilter: AccImageFilter {
         self.name = "LuminanceThreshold"
     }
     override func applyFilter() {
-        addCommandWithOneFactor(threshold)
+        addCommandWithFactor([threshold])
     }
 }
 
@@ -213,6 +216,19 @@ class AccLuminanceRangeFilter: AccImageFilter {
         self.name = "LuminanceRange"
     }
     override func applyFilter() {
-        addCommandWithOneFactor(rangeReduction)
+        addCommandWithFactor([rangeReduction])
+    }
+}
+
+
+class AccWhiteBalanceFilter: AccImageFilter {
+    var temperature:Float?
+    var tint:Float?
+    override init(){
+        super.init()
+        self.name = "WhiteBalance"
+    }
+    override func applyFilter() {
+        addCommandWithFactor([temperature,tint])
     }
 }

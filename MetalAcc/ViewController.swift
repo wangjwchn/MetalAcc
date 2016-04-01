@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         
 
         let filter = AccBrightnessFilter()
-        filter.brightness = 0.95
+        filter.brightness = -0.8
         accimage.AddFilter(filter)
         
         let outimage = accimage.Processing()
