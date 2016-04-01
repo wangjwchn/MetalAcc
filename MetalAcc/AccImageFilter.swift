@@ -208,7 +208,7 @@ class AccLuminanceThresholdFilter: AccImageFilter {
         addCommandWithFactor([threshold])
     }
 }
-
+//-----
 class AccLuminanceRangeFilter: AccImageFilter {
     var rangeReduction:Float?
     override init(){
@@ -243,5 +243,16 @@ class AccChromaKeyFilter: AccImageFilter {
     }
     override func applyFilter() {
     addCommandWithFactor([thresholdSensitivity,smoothing,colorToReplace?.R,colorToReplace?.G,colorToReplace?.B])
+    }
+}
+
+class AccSolidColorGenerator: AccImageFilter {
+    var color:(R:Float,G:Float,B:Float,A:Float)?
+    override init(){
+        super.init()
+        self.name = "SolidColor"
+    }
+    override func applyFilter() {
+        addCommandWithFactor([color!.R,color!.G,color!.B,color!.A])
     }
 }
