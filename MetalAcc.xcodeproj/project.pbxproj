@@ -39,6 +39,10 @@
 		2824A1571CAE6FF900788020 /* AccSolidColorGenerator.metal in Sources */ = {isa = PBXBuildFile; fileRef = 2824A1561CAE6FF900788020 /* AccSolidColorGenerator.metal */; };
 		2824A1591CAE702F00788020 /* AccChromaKeyFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2824A1581CAE702F00788020 /* AccChromaKeyFilter.swift */; };
 		2824A15B1CAE703800788020 /* AccChromaKeyFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 2824A15A1CAE703800788020 /* AccChromaKeyFilter.metal */; };
+		2824A15F1CAE70A500788020 /* AccWhiteBalanceFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2824A15E1CAE70A500788020 /* AccWhiteBalanceFilter.swift */; };
+		2824A1611CAE70AA00788020 /* AccWhiteBalanceFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 2824A1601CAE70AA00788020 /* AccWhiteBalanceFilter.metal */; };
+		2824A1631CAE70DA00788020 /* AccLuminanceRangeFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2824A1621CAE70DA00788020 /* AccLuminanceRangeFilter.swift */; };
+		2824A1651CAE70DF00788020 /* AccLuminanceRangeFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 2824A1641CAE70DF00788020 /* AccLuminanceRangeFilter.metal */; };
 		287A828E1CAA72D900CD5721 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287A828D1CAA72D900CD5721 /* AppDelegate.swift */; };
 		287A82901CAA72D900CD5721 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287A828F1CAA72D900CD5721 /* ViewController.swift */; };
 		287A82931CAA72D900CD5721 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 287A82911CAA72D900CD5721 /* Main.storyboard */; };
@@ -91,6 +95,10 @@
 		2824A1561CAE6FF900788020 /* AccSolidColorGenerator.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = AccSolidColorGenerator.metal; sourceTree = "<group>"; };
 		2824A1581CAE702F00788020 /* AccChromaKeyFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccChromaKeyFilter.swift; sourceTree = "<group>"; };
 		2824A15A1CAE703800788020 /* AccChromaKeyFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = AccChromaKeyFilter.metal; sourceTree = "<group>"; };
+		2824A15E1CAE70A500788020 /* AccWhiteBalanceFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccWhiteBalanceFilter.swift; sourceTree = "<group>"; };
+		2824A1601CAE70AA00788020 /* AccWhiteBalanceFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = AccWhiteBalanceFilter.metal; sourceTree = "<group>"; };
+		2824A1621CAE70DA00788020 /* AccLuminanceRangeFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccLuminanceRangeFilter.swift; sourceTree = "<group>"; };
+		2824A1641CAE70DF00788020 /* AccLuminanceRangeFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = AccLuminanceRangeFilter.metal; sourceTree = "<group>"; };
 		287A828A1CAA72D900CD5721 /* MetalAcc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalAcc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		287A828D1CAA72D900CD5721 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		287A828F1CAA72D900CD5721 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -224,6 +232,10 @@
 				2824A1561CAE6FF900788020 /* AccSolidColorGenerator.metal */,
 				2824A1581CAE702F00788020 /* AccChromaKeyFilter.swift */,
 				2824A15A1CAE703800788020 /* AccChromaKeyFilter.metal */,
+				2824A15E1CAE70A500788020 /* AccWhiteBalanceFilter.swift */,
+				2824A1601CAE70AA00788020 /* AccWhiteBalanceFilter.metal */,
+				2824A1621CAE70DA00788020 /* AccLuminanceRangeFilter.swift */,
+				2824A1641CAE70DF00788020 /* AccLuminanceRangeFilter.metal */,
 			);
 			name = "Color processing";
 			sourceTree = "<group>";
@@ -301,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2824A15F1CAE70A500788020 /* AccWhiteBalanceFilter.swift in Sources */,
 				2824A12F1CAE5D5A00788020 /* AccMonochromeFilter.swift in Sources */,
 				2824A1551CAE6FF400788020 /* AccSolidColorGenerator.swift in Sources */,
 				2824A1251CAE546100788020 /* AccBrightnessFilter.swift in Sources */,
@@ -314,6 +327,7 @@
 				2824A1271CAE594F00788020 /* AccRGBFilter.swift in Sources */,
 				2824A1591CAE702F00788020 /* AccChromaKeyFilter.swift in Sources */,
 				2824A1231CAE540F00788020 /* AccColorMatrixFilter.metal in Sources */,
+				2824A1631CAE70DA00788020 /* AccLuminanceRangeFilter.swift in Sources */,
 				287A82901CAA72D900CD5721 /* ViewController.swift in Sources */,
 				2824A1391CAE6B2D00788020 /* AccHazeFilter.metal in Sources */,
 				2824A1351CAE5F2100788020 /* AccFalseColorFilter.metal in Sources */,
@@ -323,6 +337,7 @@
 				2824A1571CAE6FF900788020 /* AccSolidColorGenerator.metal in Sources */,
 				2824A1331CAE5F1500788020 /* AccFalseColorFilter.swift in Sources */,
 				287E47CC1CAE4DC200DFB82A /* AccImageLevelsFilter.swift in Sources */,
+				2824A1611CAE70AA00788020 /* AccWhiteBalanceFilter.metal in Sources */,
 				287E47CA1CAE4DB700DFB82A /* AccImageLevelsFilter.metal in Sources */,
 				2824A11F1CAE539700788020 /* AccGammaFilter.metal in Sources */,
 				2824A1291CAE595700788020 /* AccRGBFilter.metal in Sources */,
@@ -340,6 +355,7 @@
 				2824A12D1CAE5ACC00788020 /* AccHueFilter.metal in Sources */,
 				2824A1371CAE6B2200788020 /* AccHazeFilter.swift in Sources */,
 				2824A1311CAE5D6200788020 /* AccMonochromeFilter.metal in Sources */,
+				2824A1651CAE70DF00788020 /* AccLuminanceRangeFilter.metal in Sources */,
 				2824A14F1CAE6F4600788020 /* AccHighlightShadowFilter.metal in Sources */,
 				2824A11B1CAE534700788020 /* AccSaturationFilter.swift in Sources */,
 				287E47D41CAE525500DFB82A /* AccContrastFilter.metal in Sources */,
