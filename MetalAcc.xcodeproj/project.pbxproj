@@ -45,6 +45,7 @@
 		2824A1651CAE70DF00788020 /* AccLuminanceRangeFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 2824A1641CAE70DF00788020 /* AccLuminanceRangeFilter.metal */; };
 		2824A1681CAE71A200788020 /* AccPixelateFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2824A1671CAE71A200788020 /* AccPixelateFilter.swift */; };
 		2824A16A1CAE71AB00788020 /* AccPixelateFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 2824A1691CAE71AB00788020 /* AccPixelateFilter.metal */; };
+		2824A16C1CAE71F600788020 /* AccGaussianBlurFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2824A16B1CAE71F600788020 /* AccGaussianBlurFilter.swift */; };
 		287A828E1CAA72D900CD5721 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287A828D1CAA72D900CD5721 /* AppDelegate.swift */; };
 		287A82901CAA72D900CD5721 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287A828F1CAA72D900CD5721 /* ViewController.swift */; };
 		287A82931CAA72D900CD5721 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 287A82911CAA72D900CD5721 /* Main.storyboard */; };
@@ -102,6 +103,7 @@
 		2824A1641CAE70DF00788020 /* AccLuminanceRangeFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = AccLuminanceRangeFilter.metal; sourceTree = "<group>"; };
 		2824A1671CAE71A200788020 /* AccPixelateFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccPixelateFilter.swift; sourceTree = "<group>"; };
 		2824A1691CAE71AB00788020 /* AccPixelateFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = AccPixelateFilter.metal; sourceTree = "<group>"; };
+		2824A16B1CAE71F600788020 /* AccGaussianBlurFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccGaussianBlurFilter.swift; sourceTree = "<group>"; };
 		287A828A1CAA72D900CD5721 /* MetalAcc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalAcc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		287A828D1CAA72D900CD5721 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		287A828F1CAA72D900CD5721 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			children = (
 				2824A1671CAE71A200788020 /* AccPixelateFilter.swift */,
 				2824A1691CAE71AB00788020 /* AccPixelateFilter.metal */,
+				2824A16B1CAE71F600788020 /* AccGaussianBlurFilter.swift */,
 			);
 			name = "Image processing";
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				2824A13D1CAE6D6100788020 /* AccColorInvert.swift in Sources */,
 				2824A1571CAE6FF900788020 /* AccSolidColorGenerator.metal in Sources */,
 				2824A1331CAE5F1500788020 /* AccFalseColorFilter.swift in Sources */,
+				2824A16C1CAE71F600788020 /* AccGaussianBlurFilter.swift in Sources */,
 				287E47CC1CAE4DC200DFB82A /* AccImageLevelsFilter.swift in Sources */,
 				2824A1611CAE70AA00788020 /* AccWhiteBalanceFilter.metal in Sources */,
 				287E47CA1CAE4DB700DFB82A /* AccImageLevelsFilter.metal in Sources */,

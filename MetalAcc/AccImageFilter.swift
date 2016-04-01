@@ -44,25 +44,7 @@ class AccImageFilter{
 
 
 
-/*
- AccGaussianBlurFilter:Gaussian blur
- - sigma:The standard deviation of gaussian blur filter(0.0 ~ 10.0, with 0.0 as the default)
-*/
- 
-class AccGaussianBlurFilter:AccImageFilter{
-    var sigma:Float?
-    override init(){
-        super.init()
-        self.name = "GaussianBlur"
-    }
-    override func applyFilter() {
-        let commandBuffer = self.base!.commandQueue!.commandBuffer()
-        let gaussianblur = MPSImageGaussianBlur(device: self.base!.device!, sigma: sigma!)
-        gaussianblur.encodeToCommandBuffer(commandBuffer, sourceTexture: self.base!.inTexture!, destinationTexture: self.base!.outTexture!)
-        commandBuffer.commit()
-        commandBuffer.waitUntilCompleted()
-    }
-}
+
 
 /*
  AccSobelFilter: Initialize a Sobel filter on a given device using the default color
