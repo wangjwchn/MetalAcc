@@ -1,8 +1,8 @@
 ![MetalAcc](https://raw.githubusercontent.com/wangjwchn/MetalAcc/master/cover.png?token=ANBWxJ4T8E4b9BbzKQ5TQPakNKgW_yKKks5XBkdRwA%3D%3D)
 [![Language](https://img.shields.io/badge/swift-2.2-orange.svg)](http://swift.org)
+[![Metal](https://img.shields.io/badge/Apple-Metal-red.svg)](https://developer.apple.com/metal/)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![Pod License](http://img.shields.io/cocoapods/l/SDWebImage.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0.html)
-
+[![Pod License](https://img.shields.io/dub/l/vibe-d.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 GPU-based media processing library using Metal written in Swift.
 #Overview
