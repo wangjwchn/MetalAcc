@@ -20,5 +20,4 @@ class AccGammaFilter: AccImageFilter {
     override func applyFilter() {
         addCommandWithFactor([gamma])
     }
-    
 }
