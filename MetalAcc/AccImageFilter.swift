@@ -110,54 +110,7 @@ class AccGrayscaleFilter: AccImageFilter {
 
 }
 
-/*
- AccBrightnessFilter: Adjusts the brightness of the image
- - brightness: The adjusted brightness (-1.0 ~ 1.0, with 0.0 as the default)
-*/
-class AccBrightnessFilter: AccImageFilter {
-    var brightness:Float?
-    override init(){
-        super.init()
-        self.name = "Brightness"
-    }
-    override func applyFilter() {
-        //addCommandWithOneFactor(brightness)
-        addCommandWithFactor([brightness,0.8])
-    }
-    
-}
 
-/*
- AccSaturationFilter: Adjusts the saturation of an image
- - saturation: The degree of saturation or desaturation to apply to the image (0.0 ~ 2.0, with 1.0 as the default)
-*/
-class AccSaturationFilter: AccImageFilter {
-    var saturation:Float?
-    override init(){
-        super.init()
-        self.name = "Saturation"
-    }
-    override func applyFilter() {
-        addCommandWithFactor([saturation])
-    }
-    
-}
-
-/*
- AccImageGammaFilter: Adjusts the gamma of an image
- - gamma: The gamma adjustment to apply (0.0 ~ 3.0, with 1.0 as the default)
-*/
-class AccGammaFilter: AccImageFilter {
-    var gamma:Float?
-    override init(){
-        super.init()
-        self.name = "Gamma"
-    }
-    override func applyFilter() {
-        addCommandWithFactor([gamma])
-    }
-    
-}
 
 /*
  AccColorInvertFilter: Inverts the colors of an image
@@ -169,36 +122,6 @@ class AccColorInvertFilter: AccImageFilter {
     }
     override func applyFilter() {
         addCommandWithoutFactor()
-    }
-}
-
-/*
- AccContrastFilter: Adjusts the contrast of the image
- - contrast: The adjusted contrast (0.0 ~ 4.0, with 1.0 as the default)
-*/
-class AccContrastFilter: AccImageFilter {
-    var contrast:Float?
-    override init(){
-        super.init()
-        self.name = "Contrast"
-    }
-    override func applyFilter() {
-        addCommandWithFactor([contrast])
-    }
-}
-
-/*
- AccExposureFilter: Adjusts the exposure of the image
- - exposure: The adjusted exposure (-10.0 - 10.0, with 0.0 as the default)
-*/
-class AccExposureFilter: AccImageFilter {
-    var exposure:Float?
-    override init(){
-        super.init()
-        self.name = "Exposure"
-    }
-    override func applyFilter() {
-        addCommandWithFactor([exposure])
     }
 }
 
