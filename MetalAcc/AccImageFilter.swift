@@ -205,3 +205,14 @@ class AccLuminanceThresholdFilter: AccImageFilter {
         addCommandWithOneFactor(threshold)
     }
 }
+
+class AccLuminanceRangeFilter: AccImageFilter {
+    var rangeReduction:Float?
+    override init(){
+        super.init()
+        self.name = "LuminanceRange"
+    }
+    override func applyFilter() {
+        addCommandWithOneFactor(rangeReduction)
+    }
+}
