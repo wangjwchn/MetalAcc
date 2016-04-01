@@ -214,4 +214,22 @@ kernel void Opacity(texture2d<float, access::read> inTexture [[texture(0)]],
     outTexture.write(outColor, gid);
 }
 
+kernel void HighlightShadow(texture2d<float, access::read> inTexture [[texture(0)]],
+                    texture2d<float, access::write> outTexture [[texture(1)]],
+                    device float *shadows [[buffer(0)]],
+                    device float *highlights [[buffer(1)]],
+                    uint2 gid [[thread_position_in_grid]])
+{
+    const float3 luminanceWeighting = float3(0.3, 0.3, 0.3);
+    float4 inColor = inTexture.read(gid);
+    float luminance = dot(inColor.rgb, luminanceWeighting);
+    
+    float shadow = clamp((pow(luminance, 1.0/(*shadows+1.0)) + (-0.76)*pow(luminance, 2.0/(*shadows+1.0))) - luminance, 0.0, 1.0);
+    float highlight = clamp((1.0 - (pow(1.0-luminance, 1.0/(2.0-*highlights)) + (-0.8)*pow(1.0-luminance, 2.0/(2.0-*highlights)))) - luminance, -1.0, 0.0);
+    float3 result = float3(0.0, 0.0, 0.0) + ((luminance + shadow + highlight) - 0.0) * ((inColor.rgb - float3(0.0, 0.0, 0.0))/(luminance - 0.0));
+    
+    float4 outColor  = float4(result.rgb, inColor.a);
+    outTexture.write(outColor, gid);
+}
+
 

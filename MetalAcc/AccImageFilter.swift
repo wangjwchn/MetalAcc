@@ -268,4 +268,16 @@ class AccOpacityFilter: AccImageFilter {
     }
 }
 
+class AccHighlightShadowFilter: AccImageFilter {
+    var shadows:Float?
+    var highlights:Float?
+    override init(){
+        super.init()
+        self.name = "HighlightShadow"
+    }
+    override func applyFilter() {
+        addCommandWithFactor([shadows,highlights])
+    }
+}
+
 
