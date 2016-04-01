@@ -101,20 +101,6 @@ class AccSobelFilter: AccImageFilter {
 
 
 
-/*
- AccLuminanceThresholdFilter: Pixels with a luminance above the threshold will appear white, and those below will be black
- - threshold: The luminance threshold, from 0.0 to 1.0, with a default of 0.5
-*/
-class AccLuminanceThresholdFilter: AccImageFilter {
-    var threshold:Float?
-    override init(){
-        super.init()
-        self.name = "LuminanceThreshold"
-    }
-    override func applyFilter() {
-        addCommandWithFactor([threshold])
-    }
-}
 //-----
 class AccLuminanceRangeFilter: AccImageFilter {
     var rangeReduction:Float?
