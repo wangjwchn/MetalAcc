@@ -7,7 +7,6 @@
 //
 
 import MetalKit
-import MetalPerformanceShaders
 class AccImageFilter{
     var name:String?
     weak var base:AccImage?
@@ -45,22 +44,4 @@ class AccImageFilter{
 
 
 
-
-/*
- AccSobelFilter: Initialize a Sobel filter on a given device using the default color
- - transform. Default: BT.601/JPEG {0.299f, 0.587f, 0.114f}
-*/
-class AccSobelFilter: AccImageFilter {
-    override init(){
-        super.init()
-        self.name = "ImageSobel"
-    }
-    override func applyFilter() {
-        let commandBuffer = self.base!.commandQueue!.commandBuffer()
-        let sobel = MPSImageSobel(device: self.base!.device!)
-        sobel.encodeToCommandBuffer(commandBuffer, sourceTexture: self.base!.inTexture!, destinationTexture: self.base!.outTexture!)
-        commandBuffer.commit()
-        commandBuffer.waitUntilCompleted()
-    }
-}
 
