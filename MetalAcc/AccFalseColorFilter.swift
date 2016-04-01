@@ -6,7 +6,6 @@
 //  Copyright © 2016年 JW. All rights reserved.
 //
 
-import Foundation
 class AccFalseColorFilter: AccImageFilter {
     var firstColor:(R:Float,G:Float,B:Float)?
     var secondColor:(R:Float,G:Float,B:Float)?
