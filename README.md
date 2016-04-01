@@ -3,7 +3,7 @@ GPU-based media processing library using Metal written in Swift.
 #Overview
 MetalAcc is a GPU-Based media processing library that lets you apply GPU-accelerated filters to images.
 
-This library is highly insperad by famous library [Acc](http://github.com/BradLarson/Acc). Basically following the nterface of Acc,
+This library is highly insperad by famous library [GPUImage](http://github.com/BradLarson/Acc). Basically following the interface of GPUImage,
 but using [Metal](https://developer.apple.com/metal/) and [Swift](https://www.swift.com), Apple's new graphics and compute application programming interface and programing language.
 
 This library is currently under programing.And more filters will be adding soon.If you want to add a new filter for this library,see [here](https://github.com/wangjwchn/MetalAcc#contribution).
