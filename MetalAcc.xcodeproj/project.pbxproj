@@ -27,6 +27,8 @@
 		2824A13B1CAE6C8B00788020 /* AccSepiaFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2824A13A1CAE6C8B00788020 /* AccSepiaFilter.swift */; };
 		2824A13D1CAE6D6100788020 /* AccColorInvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2824A13C1CAE6D6100788020 /* AccColorInvert.swift */; };
 		2824A13F1CAE6D7100788020 /* AccColorInvert.metal in Sources */ = {isa = PBXBuildFile; fileRef = 2824A13E1CAE6D7100788020 /* AccColorInvert.metal */; };
+		2824A1411CAE6DC700788020 /* AccGrayscaleFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2824A1401CAE6DC700788020 /* AccGrayscaleFilter.swift */; };
+		2824A1431CAE6DD100788020 /* AccGrayscaleFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 2824A1421CAE6DD100788020 /* AccGrayscaleFilter.metal */; };
 		287A828E1CAA72D900CD5721 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287A828D1CAA72D900CD5721 /* AppDelegate.swift */; };
 		287A82901CAA72D900CD5721 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287A828F1CAA72D900CD5721 /* ViewController.swift */; };
 		287A82931CAA72D900CD5721 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 287A82911CAA72D900CD5721 /* Main.storyboard */; };
@@ -67,6 +69,8 @@
 		2824A13A1CAE6C8B00788020 /* AccSepiaFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccSepiaFilter.swift; sourceTree = "<group>"; };
 		2824A13C1CAE6D6100788020 /* AccColorInvert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccColorInvert.swift; sourceTree = "<group>"; };
 		2824A13E1CAE6D7100788020 /* AccColorInvert.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = AccColorInvert.metal; sourceTree = "<group>"; };
+		2824A1401CAE6DC700788020 /* AccGrayscaleFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccGrayscaleFilter.swift; sourceTree = "<group>"; };
+		2824A1421CAE6DD100788020 /* AccGrayscaleFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = AccGrayscaleFilter.metal; sourceTree = "<group>"; };
 		287A828A1CAA72D900CD5721 /* MetalAcc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalAcc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		287A828D1CAA72D900CD5721 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		287A828F1CAA72D900CD5721 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -188,6 +192,8 @@
 				2824A13A1CAE6C8B00788020 /* AccSepiaFilter.swift */,
 				2824A13C1CAE6D6100788020 /* AccColorInvert.swift */,
 				2824A13E1CAE6D7100788020 /* AccColorInvert.metal */,
+				2824A1401CAE6DC700788020 /* AccGrayscaleFilter.swift */,
+				2824A1421CAE6DD100788020 /* AccGrayscaleFilter.metal */,
 			);
 			name = "Color processing";
 			sourceTree = "<group>";
@@ -272,6 +278,7 @@
 				287E47D21CAE524900DFB82A /* AccContrastFilter.swift in Sources */,
 				2824A11D1CAE539200788020 /* AccGammaFilter.swift in Sources */,
 				2824A13F1CAE6D7100788020 /* AccColorInvert.metal in Sources */,
+				2824A1411CAE6DC700788020 /* AccGrayscaleFilter.swift in Sources */,
 				2824A1271CAE594F00788020 /* AccRGBFilter.swift in Sources */,
 				2824A1231CAE540F00788020 /* AccColorMatrixFilter.metal in Sources */,
 				287A82901CAA72D900CD5721 /* ViewController.swift in Sources */,
@@ -285,6 +292,7 @@
 				287E47CA1CAE4DB700DFB82A /* AccImageLevelsFilter.metal in Sources */,
 				2824A11F1CAE539700788020 /* AccGammaFilter.metal in Sources */,
 				2824A1291CAE595700788020 /* AccRGBFilter.metal in Sources */,
+				2824A1431CAE6DD100788020 /* AccGrayscaleFilter.metal in Sources */,
 				2824A13B1CAE6C8B00788020 /* AccSepiaFilter.swift in Sources */,
 				28C6F7DA1CABA479002E59F7 /* AccImageFilterShaders.metal in Sources */,
 				28C6F7D61CAB736D002E59F7 /* AccImage.swift in Sources */,

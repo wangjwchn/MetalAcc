@@ -95,20 +95,7 @@ class AccSobelFilter: AccImageFilter {
     }
 }
 
-/*
- AccGrayscaleFilter: Converts an image to grayscale
-*/
-class AccGrayscaleFilter: AccImageFilter {
-    var grayscale:Float?
-    override init(){
-        super.init()
-        self.name = "Grayscale"
-    }
-    override func applyFilter() {
-        addCommandWithFactor([grayscale])
-    }
 
-}
 
 
 
