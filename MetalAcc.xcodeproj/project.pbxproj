@@ -57,6 +57,11 @@
 		2824A2831CAE7F0E00788020 /* AccWhiteBalanceFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 2824A2511CAE7F0E00788020 /* AccWhiteBalanceFilter.metal */; };
 		2824A2841CAE7F0E00788020 /* AccWhiteBalanceFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2824A2521CAE7F0E00788020 /* AccWhiteBalanceFilter.swift */; };
 		2824A2901CAE854900788020 /* AccImageFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2824A28F1CAE854900788020 /* AccImageFilter.swift */; };
+		2841E9631CAFCAF2002A4BE0 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2841E9601CAFCAF2002A4BE0 /* Metal.framework */; };
+		2841E9641CAFCAF2002A4BE0 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2841E9611CAFCAF2002A4BE0 /* MetalKit.framework */; };
+		2841E9651CAFCAF2002A4BE0 /* MetalPerformanceShaders.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2841E9621CAFCAF2002A4BE0 /* MetalPerformanceShaders.framework */; };
+		286CEDBB1CAFBAD900E7380B /* AccTransformFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286CEDBA1CAFBAD900E7380B /* AccTransformFilter.swift */; };
+		286CEDBD1CAFBAE100E7380B /* AccTransformFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 286CEDBC1CAFBAE100E7380B /* AccTransformFilter.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +117,11 @@
 		2824A2511CAE7F0E00788020 /* AccWhiteBalanceFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = AccWhiteBalanceFilter.metal; sourceTree = "<group>"; };
 		2824A2521CAE7F0E00788020 /* AccWhiteBalanceFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccWhiteBalanceFilter.swift; sourceTree = "<group>"; };
 		2824A28F1CAE854900788020 /* AccImageFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccImageFilter.swift; sourceTree = "<group>"; };
+		2841E9601CAFCAF2002A4BE0 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		2841E9611CAFCAF2002A4BE0 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
+		2841E9621CAFCAF2002A4BE0 /* MetalPerformanceShaders.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalPerformanceShaders.framework; path = System/Library/Frameworks/MetalPerformanceShaders.framework; sourceTree = SDKROOT; };
+		286CEDBA1CAFBAD900E7380B /* AccTransformFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccTransformFilter.swift; sourceTree = "<group>"; };
+		286CEDBC1CAFBAE100E7380B /* AccTransformFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = AccTransformFilter.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +129,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2841E9631CAFCAF2002A4BE0 /* Metal.framework in Frameworks */,
+				2841E9641CAFCAF2002A4BE0 /* MetalKit.framework in Frameworks */,
+				2841E9651CAFCAF2002A4BE0 /* MetalPerformanceShaders.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,6 +142,9 @@
 			isa = PBXGroup;
 			children = (
 				2824A2171CAE7A8D00788020 /* MetalAcc */,
+				2841E9601CAFCAF2002A4BE0 /* Metal.framework */,
+				2841E9611CAFCAF2002A4BE0 /* MetalKit.framework */,
+				2841E9621CAFCAF2002A4BE0 /* MetalPerformanceShaders.framework */,
 				2824A2161CAE7A8D00788020 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -156,6 +172,15 @@
 		2824A2221CAE7F0E00788020 /* AccImageFilter */ = {
 			isa = PBXGroup;
 			children = (
+				286CEDB91CAFB96900E7380B /* Image processing */,
+				286CEDB81CAFB95500E7380B /* Color processing */,
+			);
+			path = AccImageFilter;
+			sourceTree = "<group>";
+		};
+		286CEDB81CAFB95500E7380B /* Color processing */ = {
+			isa = PBXGroup;
+			children = (
 				2824A2231CAE7F0E00788020 /* AccBrightnessFilter.metal */,
 				2824A2241CAE7F0E00788020 /* AccBrightnessFilter.swift */,
 				2824A2251CAE7F0E00788020 /* AccChromaKeyFilter.metal */,
@@ -172,7 +197,6 @@
 				2824A2301CAE7F0E00788020 /* AccFalseColorFilter.swift */,
 				2824A2311CAE7F0E00788020 /* AccGammaFilter.metal */,
 				2824A2321CAE7F0E00788020 /* AccGammaFilter.swift */,
-				2824A2331CAE7F0E00788020 /* AccGaussianBlurFilter.swift */,
 				2824A2341CAE7F0E00788020 /* AccGrayscaleFilter.metal */,
 				2824A2351CAE7F0E00788020 /* AccGrayscaleFilter.swift */,
 				2824A2361CAE7F0E00788020 /* AccHazeFilter.metal */,
@@ -191,20 +215,30 @@
 				2824A2441CAE7F0E00788020 /* AccMonochromeFilter.swift */,
 				2824A2451CAE7F0E00788020 /* AccOpacityFilter.metal */,
 				2824A2461CAE7F0E00788020 /* AccOpacityFilter.swift */,
-				2824A2471CAE7F0E00788020 /* AccPixelateFilter.metal */,
-				2824A2481CAE7F0E00788020 /* AccPixelateFilter.swift */,
 				2824A2491CAE7F0E00788020 /* AccRGBFilter.metal */,
 				2824A24A1CAE7F0E00788020 /* AccRGBFilter.swift */,
 				2824A24B1CAE7F0E00788020 /* AccSaturationFilter.metal */,
 				2824A24C1CAE7F0E00788020 /* AccSaturationFilter.swift */,
 				2824A24D1CAE7F0E00788020 /* AccSepiaFilter.swift */,
-				2824A24E1CAE7F0E00788020 /* AccSobelFilter.swift */,
 				2824A24F1CAE7F0E00788020 /* AccSolidColorGenerator.metal */,
 				2824A2501CAE7F0E00788020 /* AccSolidColorGenerator.swift */,
 				2824A2511CAE7F0E00788020 /* AccWhiteBalanceFilter.metal */,
 				2824A2521CAE7F0E00788020 /* AccWhiteBalanceFilter.swift */,
 			);
-			path = AccImageFilter;
+			name = "Color processing";
+			sourceTree = "<group>";
+		};
+		286CEDB91CAFB96900E7380B /* Image processing */ = {
+			isa = PBXGroup;
+			children = (
+				2824A2481CAE7F0E00788020 /* AccPixelateFilter.swift */,
+				2824A2471CAE7F0E00788020 /* AccPixelateFilter.metal */,
+				2824A24E1CAE7F0E00788020 /* AccSobelFilter.swift */,
+				2824A2331CAE7F0E00788020 /* AccGaussianBlurFilter.swift */,
+				286CEDBA1CAFBAD900E7380B /* AccTransformFilter.swift */,
+				286CEDBC1CAFBAE100E7380B /* AccTransformFilter.metal */,
+			);
+			name = "Image processing";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,6 +353,7 @@
 				2824A2821CAE7F0E00788020 /* AccSolidColorGenerator.swift in Sources */,
 				2824A2631CAE7F0E00788020 /* AccGammaFilter.metal in Sources */,
 				2824A2681CAE7F0E00788020 /* AccHazeFilter.metal in Sources */,
+				286CEDBD1CAFBAE100E7380B /* AccTransformFilter.metal in Sources */,
 				2824A2591CAE7F0E00788020 /* AccColorInvert.metal in Sources */,
 				2824A26C1CAE7F0E00788020 /* AccHueFilter.metal in Sources */,
 				2824A26A1CAE7F0E00788020 /* AccHighlightShadowFilter.metal in Sources */,
@@ -332,6 +367,7 @@
 				2824A27B1CAE7F0E00788020 /* AccRGBFilter.metal in Sources */,
 				2824A2761CAE7F0E00788020 /* AccMonochromeFilter.swift in Sources */,
 				2824A2541CAE7F0E00788020 /* AccImage.swift in Sources */,
+				286CEDBB1CAFBAD900E7380B /* AccTransformFilter.swift in Sources */,
 				2824A2581CAE7F0E00788020 /* AccChromaKeyFilter.swift in Sources */,
 				2824A25B1CAE7F0E00788020 /* AccColorMatrixFilter.metal in Sources */,
 				2824A27E1CAE7F0E00788020 /* AccSaturationFilter.swift in Sources */,

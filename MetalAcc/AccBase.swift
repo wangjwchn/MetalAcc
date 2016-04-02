@@ -12,8 +12,8 @@ public class AccBase{
     public var library:MTLLibrary? = nil
     public var commandQueue:MTLCommandQueue? = nil
     public init(){
-        device = MTLCreateSystemDefaultDevice()
-        library = self.device!.newDefaultLibrary()
-        commandQueue = self.device!.newCommandQueue()
+        self.device = MTLCreateSystemDefaultDevice()
+        self.library = self.device!.newDefaultLibrary()
+        self.commandQueue = self.device!.newCommandQueue()
     }
 }

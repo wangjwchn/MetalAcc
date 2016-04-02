@@ -35,6 +35,8 @@ public class AccImage:AccBase{
         catch {
             fatalError("Unable to setup Metal")
         }
+        }else{
+            fatalError("Unable to load library")
         }
         self.filter = filter
         self.filter?.base = self

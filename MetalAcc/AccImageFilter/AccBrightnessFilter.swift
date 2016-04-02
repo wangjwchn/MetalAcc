@@ -11,11 +11,11 @@
  - brightness: The adjusted brightness (-1.0 ~ 1.0, with 0.0 as the default)
 */
 public class AccBrightnessFilter: AccImageFilter {
-    var brightness:Float?
-    override init(){
+    public var brightness:Float?
+    override public init(){
         super.init()
-        self.name = "Brightness"
         self.brightness = 0.0
+        self.name = "Brightness"
     }
     override public func applyFilter() {
         addCommandWithFactor([brightness])

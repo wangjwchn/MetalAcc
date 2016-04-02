@@ -13,6 +13,8 @@
 		2824A1851CAE78D000788020 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2824A1841CAE78D000788020 /* Assets.xcassets */; };
 		2824A1881CAE78D000788020 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2824A1861CAE78D000788020 /* LaunchScreen.storyboard */; };
 		2824A2861CAE835800788020 /* AnimalImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 2824A2851CAE835800788020 /* AnimalImage.png */; };
+		2841E9661CAFCD80002A4BE0 /* MetalAcc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 282E8A751CAE8A6C008532CA /* MetalAcc.framework */; };
+		2841E9671CAFCD80002A4BE0 /* MetalAcc.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 282E8A751CAE8A6C008532CA /* MetalAcc.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,7 +25,28 @@
 			remoteGlobalIDString = 2824A2151CAE7A8D00788020;
 			remoteInfo = MetalAcc;
 		};
+		2841E9681CAFCD80002A4BE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2824A2871CAE838200788020 /* MetalAcc.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 2824A2141CAE7A8D00788020;
+			remoteInfo = MetalAcc;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2841E96A1CAFCD80002A4BE0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2841E9671CAFCD80002A4BE0 /* MetalAcc.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2824A17A1CAE78D000788020 /* MetalAccExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalAccExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2841E9661CAFCD80002A4BE0 /* MetalAcc.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,10 +121,12 @@
 				2824A1761CAE78D000788020 /* Sources */,
 				2824A1771CAE78D000788020 /* Frameworks */,
 				2824A1781CAE78D000788020 /* Resources */,
+				2841E96A1CAFCD80002A4BE0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2841E9691CAFCD80002A4BE0 /* PBXTargetDependency */,
 			);
 			name = MetalAccExample;
 			productName = MetalAccExample;
@@ -182,6 +208,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2841E9691CAFCD80002A4BE0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MetalAcc;
+			targetProxy = 2841E9681CAFCD80002A4BE0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2824A1811CAE78D000788020 /* Main.storyboard */ = {
@@ -292,6 +326,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = MetalAccExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.jw.MetalAccExample;
@@ -303,6 +338,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = MetalAccExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.jw.MetalAccExample;
