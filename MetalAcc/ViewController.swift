@@ -18,10 +18,8 @@ class ViewController: UIViewController {
         
         let accimage = AccImage()
         accimage.AddImage(inimage)
-
-        //let filter = AccPixelateFilter()
-        let filter = AccBrightnessFilter()
-        //filter.affineTransform = CGAffineTransform(a: 1.0, b: 0.0, c: 0.0, d: 1.0, tx: 0.0, ty: 0.0)
+        
+        let filter = AccTransformFilter()
         
         accimage.AddFilter(filter)
         

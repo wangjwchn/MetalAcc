@@ -15,6 +15,6 @@ public class AccTransformFilter:AccImageFilter{
         self.affineTransform = CGAffineTransform(a: 1.0, b: 0.0, c: 0.0, d: 1.0, tx: 0.0, ty: 0.0)
     }
     override public func applyFilter() {
-        addCommandWithFactor([affineTransform!.a,affineTransform!.b,affineTransform!.c,affineTransform!.d,affineTransform!.tx,affineTransform!.ty])
+        addCommandWithFactor([Float(affineTransform!.a),Float(affineTransform!.b),Float(affineTransform!.c),Float(affineTransform!.d),Float(affineTransform!.tx),Float(affineTransform!.ty)])
     }
 }
