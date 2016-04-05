@@ -10,8 +10,8 @@
 using namespace metal;
 kernel void DirectionalNonMaximumSuppression(texture2d<float, access::read> inTexture [[texture(0)]],
                       texture2d<float, access::write> outTexture [[texture(1)]],
-                      device unsigned int *lowerThreshold [[buffer(0)]],
-                      device unsigned int *upperThreshold [[buffer(1)]],
+                      device float *lowerThreshold [[buffer(0)]],
+                      device float *upperThreshold [[buffer(1)]],
                       uint2 gid [[thread_position_in_grid]])
 {
     float3 currentGradientAndDirection = inTexture.read(gid).rgb;

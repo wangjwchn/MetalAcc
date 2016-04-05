@@ -10,7 +10,7 @@
 using namespace metal;
 kernel void ThresholdEdgeDetection(texture2d<float, access::read> inTexture [[texture(0)]],
                                texture2d<float, access::write> outTexture [[texture(1)]],
-                               device unsigned int *threshold [[buffer(0)]],
+                               device float *threshold [[buffer(0)]],
                                uint2 gid [[thread_position_in_grid]])
 {
     const float bottomIntensity = inTexture.read(uint2(gid.x,gid.y-1)).r;
