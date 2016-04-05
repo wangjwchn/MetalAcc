@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import MetalAcc
 class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,11 +19,10 @@ class ViewController: UIViewController {
         let accimage = AccImage()
         accimage.AddImage(inimage)
 
+        //let filter = AccPixelateFilter()
         let filter = AccBrightnessFilter()
-        /*
-        let filter = AccTransformFilter()
-        filter.affineTransform = CGAffineTransform(a: 1.0, b: 0.0, c: 0.0, d: 1.0, tx: 0.0, ty: 0.0)
-        */
+        //filter.affineTransform = CGAffineTransform(a: 1.0, b: 0.0, c: 0.0, d: 1.0, tx: 0.0, ty: 0.0)
+        
         accimage.AddFilter(filter)
         
         let outimage = accimage.Processing()

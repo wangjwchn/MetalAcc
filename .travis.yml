@@ -1,5 +1,0 @@
-language: objective-c
-osx_image: xcode7.3
-xcode_workspace: MetalAcc.xcworkspace
-xcode_scheme: MetalAccExample
-xcode_sdk: iphoneos9.3

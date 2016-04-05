@@ -12,10 +12,11 @@ import Foundation
  - pixelSize:The degree of pixelating (>0)
  */
 public class AccPixelateFilter:AccImageFilter{
-    var pixelSize:UInt?//0~?
-    override init(){
+    public var pixelSize:UInt?//1~?
+    override public init(){
         super.init()
         self.name = "Pixelate"
+        self.pixelSize = 1;
     }
     override public func applyFilter() {
         addCommandWithFactor([pixelSize])
