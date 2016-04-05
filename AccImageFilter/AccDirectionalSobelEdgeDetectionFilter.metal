@@ -32,5 +32,6 @@ kernel void DirectionalSobelEdgeDetection(texture2d<float, access::read> inTextu
     normalizedDirection = (normalizedDirection + 1.0) * 0.5; // Place -1.0 - 1.0 within 0 - 1.0
     
     float4 outColor = float4(gradientMagnitude, normalizedDirection.x, normalizedDirection.y, 1.0);
+    outTexture.write(outColor,gid);
 }
 

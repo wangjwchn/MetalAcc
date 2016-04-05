@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         let accimage = AccImage()
         accimage.AddImage(inimage)
         
-        let filter = AccMedian3x3Filter()
+        let filter = AccDirectionalNonMaximumSuppressionFilter()
         accimage.AddFilter(filter)
        
         
