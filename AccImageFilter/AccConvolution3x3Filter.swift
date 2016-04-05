@@ -13,7 +13,7 @@ public class AccConvolution3x3Filter: AccImageFilter {
     x31:Float,x32:Float,x33:Float)?
     override init(){
         super.init()
-        self.name = "convolution3x3"
+        self.name = "Convolution3x3"
         self.convolutionKernel =
             (0, 0, 0,
              0, 1, 0,
