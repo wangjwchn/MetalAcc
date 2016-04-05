@@ -65,6 +65,8 @@
 		282A2F731CB3970F00D464C8 /* AccImageFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282A2F3F1CB3970F00D464C8 /* AccImageFilter.swift */; };
 		282A2F751CB3972100D464C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282A2F741CB3972100D464C8 /* ViewController.swift */; };
 		282A2F771CB3972600D464C8 /* AnimalImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 282A2F761CB3972600D464C8 /* AnimalImage.png */; };
+		282A2F7B1CB3A01600D464C8 /* AccSharpenFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282A2F7A1CB3A01600D464C8 /* AccSharpenFilter.swift */; };
+		282A2F7D1CB3A02200D464C8 /* AccSharpenFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 282A2F7C1CB3A02200D464C8 /* AccSharpenFilter.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,6 +130,8 @@
 		282A2F3F1CB3970F00D464C8 /* AccImageFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccImageFilter.swift; sourceTree = "<group>"; };
 		282A2F741CB3972100D464C8 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		282A2F761CB3972600D464C8 /* AnimalImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AnimalImage.png; sourceTree = "<group>"; };
+		282A2F7A1CB3A01600D464C8 /* AccSharpenFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccSharpenFilter.swift; sourceTree = "<group>"; };
+		282A2F7C1CB3A02200D464C8 /* AccSharpenFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = AccSharpenFilter.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +206,8 @@
 				282A2F321CB3970F00D464C8 /* AccPixelateFilter.swift */,
 				282A2F3B1CB3970F00D464C8 /* AccTransformFilter.metal */,
 				282A2F3C1CB3970F00D464C8 /* AccTransformFilter.swift */,
+				282A2F7A1CB3A01600D464C8 /* AccSharpenFilter.swift */,
+				282A2F7C1CB3A02200D464C8 /* AccSharpenFilter.metal */,
 			);
 			name = "Image processing";
 			sourceTree = "<group>";
@@ -334,6 +340,7 @@
 				282A2F661CB3970F00D464C8 /* AccPixelateFilter.swift in Sources */,
 				282A2F541CB3970F00D464C8 /* AccGrayscaleFilter.swift in Sources */,
 				282A2F611CB3970F00D464C8 /* AccMonochromeFilter.metal in Sources */,
+				282A2F7D1CB3A02200D464C8 /* AccSharpenFilter.metal in Sources */,
 				282A2F5E1CB3970F00D464C8 /* AccLuminanceRangeFilter.swift in Sources */,
 				282A2F6D1CB3970F00D464C8 /* AccSolidColorGenerator.metal in Sources */,
 				282A2F441CB3970F00D464C8 /* AccChromaKeyFilter.metal in Sources */,
@@ -383,6 +390,7 @@
 				282A2F491CB3970F00D464C8 /* AccColorMatrixFilter.swift in Sources */,
 				282A2F6B1CB3970F00D464C8 /* AccSepiaFilter.swift in Sources */,
 				282A2F411CB3970F00D464C8 /* AccImage.swift in Sources */,
+				282A2F7B1CB3A01600D464C8 /* AccSharpenFilter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

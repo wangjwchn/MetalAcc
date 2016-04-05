@@ -19,9 +19,9 @@ class ViewController: UIViewController {
         let accimage = AccImage()
         accimage.AddImage(inimage)
         
-        let filter = AccTransformFilter()
-        
+        let filter = AccSharpenFilter()
         accimage.AddFilter(filter)
+        filter.sharpness = 4.0
         
         let outimage = accimage.Processing()
         imageview.image = outimage
