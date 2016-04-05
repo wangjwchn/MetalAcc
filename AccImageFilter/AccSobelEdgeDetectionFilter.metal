@@ -21,6 +21,7 @@ kernel void SobelEdgeDetection(texture2d<float, access::read> inTexture [[textur
     const float topIntensity = inTexture.read(uint2(gid.x,gid.y+1)).r;
     const float topRightIntensity = inTexture.read(uint2(gid.x+1,gid.y+1)).r;
     const float topLeftIntensity = inTexture.read(uint2(gid.x-1,gid.y+1)).r;
+    
     float h = -topLeftIntensity - 2.0 * topIntensity - topRightIntensity + bottomLeftIntensity + 2.0 * bottomIntensity + bottomRightIntensity;
     float v = -bottomLeftIntensity - 2.0 * leftIntensity - topLeftIntensity + bottomRightIntensity + 2.0 * rightIntensity + topRightIntensity;
     float mag = length(float2(h, v)) * *edgeStrength;

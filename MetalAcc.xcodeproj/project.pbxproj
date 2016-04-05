@@ -79,6 +79,8 @@
 		282A2F911CB406CE00D464C8 /* AccSobelEdgeDetectionFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 282A2F901CB406CE00D464C8 /* AccSobelEdgeDetectionFilter.metal */; };
 		282A2F931CB4081C00D464C8 /* AccThresholdEdgeDetectionFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282A2F921CB4081C00D464C8 /* AccThresholdEdgeDetectionFilter.swift */; };
 		282A2F951CB4082200D464C8 /* AccThresholdEdgeDetectionFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 282A2F941CB4082200D464C8 /* AccThresholdEdgeDetectionFilter.metal */; };
+		282A2F971CB40A2900D464C8 /* AccDirectionalSobelEdgeDetectionFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282A2F961CB40A2900D464C8 /* AccDirectionalSobelEdgeDetectionFilter.swift */; };
+		282A2F991CB40A3000D464C8 /* AccDirectionalSobelEdgeDetectionFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 282A2F981CB40A3000D464C8 /* AccDirectionalSobelEdgeDetectionFilter.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -156,6 +158,8 @@
 		282A2F901CB406CE00D464C8 /* AccSobelEdgeDetectionFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = AccSobelEdgeDetectionFilter.metal; sourceTree = "<group>"; };
 		282A2F921CB4081C00D464C8 /* AccThresholdEdgeDetectionFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccThresholdEdgeDetectionFilter.swift; sourceTree = "<group>"; };
 		282A2F941CB4082200D464C8 /* AccThresholdEdgeDetectionFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = AccThresholdEdgeDetectionFilter.metal; sourceTree = "<group>"; };
+		282A2F961CB40A2900D464C8 /* AccDirectionalSobelEdgeDetectionFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccDirectionalSobelEdgeDetectionFilter.swift; sourceTree = "<group>"; };
+		282A2F981CB40A3000D464C8 /* AccDirectionalSobelEdgeDetectionFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = AccDirectionalSobelEdgeDetectionFilter.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +248,8 @@
 				282A2F901CB406CE00D464C8 /* AccSobelEdgeDetectionFilter.metal */,
 				282A2F921CB4081C00D464C8 /* AccThresholdEdgeDetectionFilter.swift */,
 				282A2F941CB4082200D464C8 /* AccThresholdEdgeDetectionFilter.metal */,
+				282A2F961CB40A2900D464C8 /* AccDirectionalSobelEdgeDetectionFilter.swift */,
+				282A2F981CB40A3000D464C8 /* AccDirectionalSobelEdgeDetectionFilter.metal */,
 			);
 			name = "Image processing";
 			sourceTree = "<group>";
@@ -417,6 +423,7 @@
 				282A2F4F1CB3970F00D464C8 /* AccFalseColorFilter.swift in Sources */,
 				282A2F871CB400E400D464C8 /* AccConvolution3x3Filter.swift in Sources */,
 				282A2F6F1CB3970F00D464C8 /* AccTransformFilter.metal in Sources */,
+				282A2F991CB40A3000D464C8 /* AccDirectionalSobelEdgeDetectionFilter.metal in Sources */,
 				282A2F8B1CB4059800D464C8 /* AccLaplacianFilter.swift in Sources */,
 				282A2F4D1CB3970F00D464C8 /* AccExposureFilter.swift in Sources */,
 				282A2F471CB3970F00D464C8 /* AccColorInvert.swift in Sources */,
@@ -434,6 +441,7 @@
 				282A2F8D1CB4059E00D464C8 /* AccLaplacianFilter.metal in Sources */,
 				282A2F931CB4081C00D464C8 /* AccThresholdEdgeDetectionFilter.swift in Sources */,
 				282A2F6B1CB3970F00D464C8 /* AccSepiaFilter.swift in Sources */,
+				282A2F971CB40A2900D464C8 /* AccDirectionalSobelEdgeDetectionFilter.swift in Sources */,
 				282A2F411CB3970F00D464C8 /* AccImage.swift in Sources */,
 				282A2F7B1CB3A01600D464C8 /* AccSharpenFilter.swift in Sources */,
 				282A2F831CB3B4C000D464C8 /* AccMedian5x5Filter.swift in Sources */,
