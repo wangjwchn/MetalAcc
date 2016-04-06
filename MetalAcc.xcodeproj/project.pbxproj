@@ -101,6 +101,8 @@
 		282A2FC41CB4E95D00D464C8 /* AccRGBDilationFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 282A2FC31CB4E95D00D464C8 /* AccRGBDilationFilter.metal */; };
 		282A2FC61CB4E9FB00D464C8 /* AccErosionFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282A2FC51CB4E9FB00D464C8 /* AccErosionFilter.swift */; };
 		282A2FC81CB4EA0200D464C8 /* AccErosionFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 282A2FC71CB4EA0200D464C8 /* AccErosionFilter.metal */; };
+		282A2FCA1CB4EACB00D464C8 /* AccRGBErosionFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282A2FC91CB4EACB00D464C8 /* AccRGBErosionFilter.swift */; };
+		282A2FCC1CB4EAD100D464C8 /* AccRGBErosionFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 282A2FCB1CB4EAD100D464C8 /* AccRGBErosionFilter.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -200,6 +202,8 @@
 		282A2FC31CB4E95D00D464C8 /* AccRGBDilationFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = AccRGBDilationFilter.metal; sourceTree = "<group>"; };
 		282A2FC51CB4E9FB00D464C8 /* AccErosionFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccErosionFilter.swift; sourceTree = "<group>"; };
 		282A2FC71CB4EA0200D464C8 /* AccErosionFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = AccErosionFilter.metal; sourceTree = "<group>"; };
+		282A2FC91CB4EACB00D464C8 /* AccRGBErosionFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccRGBErosionFilter.swift; sourceTree = "<group>"; };
+		282A2FCB1CB4EAD100D464C8 /* AccRGBErosionFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = AccRGBErosionFilter.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -310,6 +314,8 @@
 				282A2FC31CB4E95D00D464C8 /* AccRGBDilationFilter.metal */,
 				282A2FC51CB4E9FB00D464C8 /* AccErosionFilter.swift */,
 				282A2FC71CB4EA0200D464C8 /* AccErosionFilter.metal */,
+				282A2FC91CB4EACB00D464C8 /* AccRGBErosionFilter.swift */,
+				282A2FCB1CB4EAD100D464C8 /* AccRGBErosionFilter.metal */,
 			);
 			name = "Image processing";
 			sourceTree = "<group>";
@@ -460,11 +466,13 @@
 				282A2F721CB3970F00D464C8 /* AccWhiteBalanceFilter.swift in Sources */,
 				282A2F7F1CB3B0EF00D464C8 /* AccMedian3x3Filter.swift in Sources */,
 				282A2FAC1CB4140500D464C8 /* AccXYDerivativeFilter.metal in Sources */,
+				282A2FCA1CB4EACB00D464C8 /* AccRGBErosionFilter.swift in Sources */,
 				282A2F711CB3970F00D464C8 /* AccWhiteBalanceFilter.metal in Sources */,
 				282A2F561CB3970F00D464C8 /* AccHazeFilter.swift in Sources */,
 				282A2F591CB3970F00D464C8 /* AccHueFilter.metal in Sources */,
 				282A2F521CB3970F00D464C8 /* AccGaussianBlurFilter.swift in Sources */,
 				282A2FBE1CB4E46800D464C8 /* AccDilationFilter.swift in Sources */,
+				282A2FCC1CB4EAD100D464C8 /* AccRGBErosionFilter.metal in Sources */,
 				282A2F6C1CB3970F00D464C8 /* AccSobelFilter.swift in Sources */,
 				282A2F581CB3970F00D464C8 /* AccHighlightShadowFilter.swift in Sources */,
 				282A2F531CB3970F00D464C8 /* AccGrayscaleFilter.metal in Sources */,

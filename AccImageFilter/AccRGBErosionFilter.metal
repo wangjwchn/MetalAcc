@@ -1,5 +1,5 @@
 //
-//  AccErosionFilter.metal
+//  AccRGBErosionFilter.metal
 //  MetalAcc
 //
 //  Created by 王佳玮 on 16/4/6.
@@ -8,10 +8,10 @@
 
 #include <metal_stdlib>
 using namespace metal;
-kernel void Erosion(texture2d<float, access::read> inTexture [[texture(0)]],
-                     texture2d<float, access::write> outTexture [[texture(1)]],
-                     device int *erosionRadius [[buffer(0)]],
-                     uint2 gid [[thread_position_in_grid]])
+kernel void RGBErosion(texture2d<float, access::read> inTexture [[texture(0)]],
+                        texture2d<float, access::write> outTexture [[texture(1)]],
+                        device int *erosionRadius [[buffer(0)]],
+                        uint2 gid [[thread_position_in_grid]])
 {
     uint2 centerTextureCoordinate = gid;
     uint2 oneStepNegativeTextureCoordinate = uint2(gid - uint2(1,1));
@@ -32,7 +32,7 @@ kernel void Erosion(texture2d<float, access::read> inTexture [[texture(0)]],
             float oneStepNegativeIntensity = inTexture.read(oneStepNegativeTextureCoordinate).r;
             float minValue = min(centerIntensity, oneStepPositiveIntensity);
             minValue = min(minValue, oneStepNegativeIntensity);
-            outColor = float4(float3(minValue), 1.0);
+            outColor = float4(float3(minValue), oneStepNegativeIntensity);
             break;
         }
         case 2:
@@ -46,7 +46,7 @@ kernel void Erosion(texture2d<float, access::read> inTexture [[texture(0)]],
             minValue = min(minValue, oneStepNegativeIntensity);
             minValue = min(minValue, twoStepsPositiveIntensity);
             minValue = min(minValue, twoStepsNegativeIntensity);
-            outColor = float4(float3(minValue), 1.0);
+            outColor = float4(float3(minValue), twoStepsNegativeIntensity);
         }
         case 3:
         {
@@ -63,7 +63,7 @@ kernel void Erosion(texture2d<float, access::read> inTexture [[texture(0)]],
             minValue = min(minValue, twoStepsNegativeIntensity);
             minValue = min(minValue, threeStepsPositiveIntensity);
             minValue = min(minValue, threeStepsNegativeIntensity);
-            outColor = float4(float3(minValue), 1.0);
+            outColor = float4(float3(minValue), threeStepsNegativeIntensity);
         }
         case 4:
         {
@@ -84,9 +84,10 @@ kernel void Erosion(texture2d<float, access::read> inTexture [[texture(0)]],
             minValue = min(minValue, threeStepsNegativeIntensity);
             minValue = min(minValue, fourStepsPositiveIntensity);
             minValue = min(minValue, fourStepsNegativeIntensity);
-            outColor = float4(float3(minValue), 1.0);
+            outColor = float4(float3(minValue), fourStepsNegativeIntensity);
         }
         default: break;
     }
     outTexture.write(outColor,gid);
 }
+
