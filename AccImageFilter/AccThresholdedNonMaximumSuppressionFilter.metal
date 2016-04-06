@@ -8,8 +8,6 @@
 
 #include <metal_stdlib>
 using namespace metal;
-#include <metal_stdlib>
-using namespace metal;
 kernel void ThresholdedNonMaximumSuppression(texture2d<float, access::read> inTexture [[texture(0)]],
                                   texture2d<float, access::write> outTexture [[texture(1)]],
                                     device float *threshold [[buffer(0)]],
