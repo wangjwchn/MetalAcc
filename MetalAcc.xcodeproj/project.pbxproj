@@ -653,7 +653,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = MetalAcc/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MetalAccExample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.jw.MetalAcc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -664,7 +664,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = MetalAcc/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MetalAccExample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.jw.MetalAcc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
