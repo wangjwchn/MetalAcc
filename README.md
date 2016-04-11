@@ -184,6 +184,10 @@ let outimage = accimage.Processing()
   - *thresholdSensitivity*: How close a color match needs to exist to the target color to be replaced (default of 0.4)
   - *smoothing*: How smoothly to blend for the color match (default of 0.1)
 
+### Image processing ###
+
+- **AccTransformFilter**: This applies an arbitrary 2-D transformation to an image
+  - *affineTransform*: This takes in a CGAffineTransform to adjust an image in 2-D
  
 #Contribution
 ####Follow these steps to add a new filter to this library:
