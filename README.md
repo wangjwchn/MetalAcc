@@ -11,7 +11,7 @@ MetalAcc is a GPU-Based media processing library that lets you apply GPU-acceler
 This library is highly insperad by famous library [GPUImage](http://github.com/BradLarson/Acc). Basically following the interface of GPUImage,
 but using [Metal](https://developer.apple.com/metal/) and [Swift](https://www.swift.com), Apple's new graphics and compute application programming interface and programing language.
 
-This library is currently under programing.And more filters will be adding soon.If you want to add a new filter for this library,see [here](https://github.com/wangjwchn/MetalAcc#contribution).
+This library is currently under programing.And more filters will be adding soon.
 #Requirements
 |Device Name 							|GPU          |
 |--------------------------------|-------------|
@@ -39,20 +39,20 @@ This library is currently under programing.And more filters will be adding soon.
 #Instructions
 ##Using Image filter
 ```swift
-let image = UIImage(named: "DemoImage")!
-
-//Add Image
-let accimage = AccImage()
-accimage.AddImage(image)
-
+//create AccImage
+let accImage = AccImage()
+        
+//Input resource
+accImage.Input(inimage)
+        
 //Add filter
-let filter = AccBrightnessFilter()
-filter.brightness = 0.95
-accimage.AddFilter(filter)
-
+accImage.AddProcessor(AccBrightnessFilter())
+        
 //Processing
-let outimage = accimage.Processing()
- imageview.image = outimage
+accImage.Processing()
+        
+//Output
+let outimage = accImage.Output()
 ```
 ### Color adjustments ###
 
@@ -188,19 +188,7 @@ let outimage = accimage.Processing()
 
 - **AccTransformFilter**: This applies an arbitrary 2-D transformation to an image
   - *affineTransform*: This takes in a CGAffineTransform to adjust an image in 2-D
- 
-#Contribution
-####Follow these steps to add a new filter to this library:
 
-1.Add a shading function in AccImageFilterShaders.metal.
-
-2.Create a new filter class inherited class 'AccImageFilter'.
-
-2.1.Override function init(),add a name,this name must be as same as the shading function in AccImageFilterShaders.metal. 
-
-2.2.Override function applyFilter() to add a commandBuffer and commit.You can use the generic function in superclass to simplify the code.
-
-3.Completed.Thanks for your contribution!
 
 #License
 MetalAcc is released under the MIT license. See [LICENSE](https://github.com/wangjwchn/MetalAcc/raw/master/LICENSE) for details.
