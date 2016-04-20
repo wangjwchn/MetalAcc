@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  MetalAcc
 //
-//  Created by 王佳玮 on 16/4/5.
-//  Copyright © 2016年 JW. All rights reserved.
+//  Created by 王佳玮 on 16/4/19.
+//  Copyright © 2016年 wangjwchn. All rights reserved.
 //
 
 import UIKit
