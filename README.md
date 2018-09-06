@@ -5,14 +5,18 @@
 [![Pod License](https://img.shields.io/dub/l/vibe-d.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 GPU-based media processing library using Metal written in Swift.
-#Overview
+
+# Overview
+
 MetalAcc is a GPU-Based media processing library that lets you apply GPU-accelerated filters to images.
 
 This library is highly insperad by famous library [GPUImage](http://github.com/BradLarson/Acc). Basically following the interface of GPUImage,
 but using [Metal](https://developer.apple.com/metal/) and [Swift](https://www.swift.com), Apple's new graphics and compute application programming interface and programing language.
 
 This library is currently under programing.And more filters will be adding soon.
-#Requirements
+
+# Requirements
+
 |Device Name 							|GPU          |
 |--------------------------------|-------------|
 |iPhone 6s							|Apple A9 GPU |
@@ -36,8 +40,10 @@ This library is currently under programing.And more filters will be adding soon.
 
 
 
-#Instructions
-##Using Image filter
+# Instructions
+
+## Using Image filter
+
 ```swift
 //create AccImage
 let accImage = AccImage()
@@ -54,6 +60,7 @@ accImage.Processing()
 //Output
 let outimage = accImage.Output()
 ```
+
 ### Color adjustments ###
 
 - **AccBrightnessFilter**: Adjusts the brightness of the image
@@ -190,5 +197,6 @@ let outimage = accImage.Output()
   - *affineTransform*: This takes in a CGAffineTransform to adjust an image in 2-D
 
 
-#License
+# License
+
 MetalAcc is released under the MIT license. See [LICENSE](https://github.com/wangjwchn/MetalAcc/raw/master/LICENSE) for details.
